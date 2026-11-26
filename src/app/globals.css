@@ -1,0 +1,2663 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* The typography plugin provides the `prose` classes used by the
+   FileViewer's Markdown renderer and the folder README card.
+   Without it, headings/lists/links render unstyled. */
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    /* One mono family only: the mono stack resolves to JetBrains Mono,
+       the dedicated code font the editors already use. */
+    --font-mono: var(--font-jb-mono);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* ─── Interface themes (lib/ui-themes.ts) ────────────────────────────
+   Each non-default theme overrides the FULL token set via
+   `[data-theme="<id>"]` on <html>. The id is applied by page.tsx from
+   the `uiTheme` setting; the `.dark` class is still set per the
+   theme's FAMILY so every existing `dark:` Tailwind variant keeps
+   working. Registered ids (UI_THEMES order): one-dark, monokai,
+   dracula, nord, gruvbox-dark, solarized-dark, tokyo-night,
+   rose-pine, solarized-light, gruvbox-light, paper-sepia,
+   high-contrast-light, high-contrast-dark. Blocks sit AFTER .dark so
+   they win the cascade for their family. */
+
+/* One Dark — Atom's balanced blue-grey. */
+[data-theme="one-dark"] {
+    --background: #282c34;
+    --foreground: #abb2bf;
+    --card: #21252b;
+    --card-foreground: #abb2bf;
+    --popover: #21252b;
+    --popover-foreground: #d7dae0;
+    --primary: #61afef;
+    --primary-foreground: #21252b;
+    --secondary: #2c313a;
+    --secondary-foreground: #abb2bf;
+    --muted: #2c313a;
+    --muted-foreground: #7f848e;
+    --accent: #2c313a;
+    --accent-foreground: #d7dae0;
+    --destructive: #e06c75;
+    --border: #3e4451;
+    --input: #3e4451;
+    --ring: #61afef;
+    --chart-1: #61afef;
+    --chart-2: #98c379;
+    --chart-3: #e5c07b;
+    --chart-4: #e06c75;
+    --chart-5: #c678dd;
+    --sidebar: #21252b;
+    --sidebar-foreground: #abb2bf;
+    --sidebar-primary: #61afef;
+    --sidebar-primary-foreground: #21252b;
+    --sidebar-accent: #2c313a;
+    --sidebar-accent-foreground: #d7dae0;
+    --sidebar-border: #3e4451;
+    --sidebar-ring: #61afef;
+}
+
+/* Monokai — warm olive-brown classic. */
+[data-theme="monokai"] {
+    --background: #272822;
+    --foreground: #f8f8f2;
+    --card: #1e1f1c;
+    --card-foreground: #f8f8f2;
+    --popover: #1e1f1c;
+    --popover-foreground: #f8f8f2;
+    --primary: #a6e22e;
+    --primary-foreground: #272822;
+    --secondary: #3e3d32;
+    --secondary-foreground: #f8f8f2;
+    --muted: #3e3d32;
+    --muted-foreground: #75715e;
+    --accent: #3e3d32;
+    --accent-foreground: #f8f8f2;
+    --destructive: #f92672;
+    --border: #49483e;
+    --input: #49483e;
+    --ring: #a6e22e;
+    --chart-1: #a6e22e;
+    --chart-2: #66d9ef;
+    --chart-3: #fd971f;
+    --chart-4: #f92672;
+    --chart-5: #ae81ff;
+    --sidebar: #1e1f1c;
+    --sidebar-foreground: #f8f8f2;
+    --sidebar-primary: #a6e22e;
+    --sidebar-primary-foreground: #272822;
+    --sidebar-accent: #3e3d32;
+    --sidebar-accent-foreground: #f8f8f2;
+    --sidebar-border: #49483e;
+    --sidebar-ring: #a6e22e;
+}
+
+/* Dracula — the purple classic. */
+[data-theme="dracula"] {
+    --background: #282a36;
+    --foreground: #f8f8f2;
+    --card: #21222c;
+    --card-foreground: #f8f8f2;
+    --popover: #21222c;
+    --popover-foreground: #f8f8f2;
+    --primary: #bd93f9;
+    --primary-foreground: #21222c;
+    --secondary: #343746;
+    --secondary-foreground: #f8f8f2;
+    --muted: #44475a;
+    --muted-foreground: #6272a4;
+    --accent: #44475a;
+    --accent-foreground: #f8f8f2;
+    --destructive: #ff5555;
+    --border: #44475a;
+    --input: #44475a;
+    --ring: #bd93f9;
+    --chart-1: #bd93f9;
+    --chart-2: #50fa7b;
+    --chart-3: #ffb86c;
+    --chart-4: #ff5555;
+    --chart-5: #8be9fd;
+    --sidebar: #21222c;
+    --sidebar-foreground: #f8f8f2;
+    --sidebar-primary: #bd93f9;
+    --sidebar-primary-foreground: #21222c;
+    --sidebar-accent: #343746;
+    --sidebar-accent-foreground: #f8f8f2;
+    --sidebar-border: #44475a;
+    --sidebar-ring: #bd93f9;
+}
+
+/* Nord — the arctic blue family. */
+[data-theme="nord"] {
+    --background: #2e3440;
+    --foreground: #eceff4;
+    --card: #3b4252;
+    --card-foreground: #eceff4;
+    --popover: #3b4252;
+    --popover-foreground: #eceff4;
+    --primary: #88c0d0;
+    --primary-foreground: #2e3440;
+    --secondary: #434c5e;
+    --secondary-foreground: #eceff4;
+    --muted: #434c5e;
+    --muted-foreground: #7b88a1;
+    --accent: #434c5e;
+    --accent-foreground: #eceff4;
+    --destructive: #bf616a;
+    --border: #4c566a;
+    --input: #4c566a;
+    --ring: #88c0d0;
+    --chart-1: #88c0d0;
+    --chart-2: #a3be8c;
+    --chart-3: #ebcb8b;
+    --chart-4: #bf616a;
+    --chart-5: #b48ead;
+    --sidebar: #353c4a;
+    --sidebar-foreground: #eceff4;
+    --sidebar-primary: #88c0d0;
+    --sidebar-primary-foreground: #2e3440;
+    --sidebar-accent: #434c5e;
+    --sidebar-accent-foreground: #eceff4;
+    --sidebar-border: #4c566a;
+    --sidebar-ring: #88c0d0;
+}
+
+/* Gruvbox Dark — retro groove. */
+[data-theme="gruvbox-dark"] {
+    --background: #282828;
+    --foreground: #ebdbb2;
+    --card: #32302f;
+    --card-foreground: #ebdbb2;
+    --popover: #32302f;
+    --popover-foreground: #ebdbb2;
+    --primary: #fabd2f;
+    --primary-foreground: #282828;
+    --secondary: #3c3836;
+    --secondary-foreground: #ebdbb2;
+    --muted: #3c3836;
+    --muted-foreground: #928374;
+    --accent: #3c3836;
+    --accent-foreground: #ebdbb2;
+    --destructive: #fb4934;
+    --border: #504945;
+    --input: #504945;
+    --ring: #fabd2f;
+    --chart-1: #b8bb26;
+    --chart-2: #8ec07c;
+    --chart-3: #fabd2f;
+    --chart-4: #fb4934;
+    --chart-5: #d3869b;
+    --sidebar: #32302f;
+    --sidebar-foreground: #ebdbb2;
+    --sidebar-primary: #fabd2f;
+    --sidebar-primary-foreground: #282828;
+    --sidebar-accent: #3c3836;
+    --sidebar-accent-foreground: #ebdbb2;
+    --sidebar-border: #504945;
+    --sidebar-ring: #fabd2f;
+}
+
+/* Solarized Dark — the low-glare lab. */
+[data-theme="solarized-dark"] {
+    --background: #002b36;
+    --foreground: #93a1a1;
+    --card: #073642;
+    --card-foreground: #93a1a1;
+    --popover: #073642;
+    --popover-foreground: #eee8d5;
+    --primary: #2aa198;
+    --primary-foreground: #002b36;
+    --secondary: #073642;
+    --secondary-foreground: #93a1a1;
+    --muted: #073642;
+    --muted-foreground: #586e75;
+    --accent: #073642;
+    --accent-foreground: #eee8d5;
+    --destructive: #dc322f;
+    --border: #0d4555;
+    --input: #0d4555;
+    --ring: #2aa198;
+    --chart-1: #2aa198;
+    --chart-2: #859900;
+    --chart-3: #b58900;
+    --chart-4: #dc322f;
+    --chart-5: #d33682;
+    --sidebar: #073642;
+    --sidebar-foreground: #93a1a1;
+    --sidebar-primary: #2aa198;
+    --sidebar-primary-foreground: #002b36;
+    --sidebar-accent: #073642;
+    --sidebar-accent-foreground: #eee8d5;
+    --sidebar-border: #0d4555;
+    --sidebar-ring: #2aa198;
+}
+
+/* Tokyo Night — neon city blues. */
+[data-theme="tokyo-night"] {
+    --background: #1a1b26;
+    --foreground: #c0caf5;
+    --card: #24283b;
+    --card-foreground: #c0caf5;
+    --popover: #24283b;
+    --popover-foreground: #c0caf5;
+    --primary: #7aa2f7;
+    --primary-foreground: #1a1b26;
+    --secondary: #2f334d;
+    --secondary-foreground: #c0caf5;
+    --muted: #2f334d;
+    --muted-foreground: #737aa2;
+    --accent: #2f334d;
+    --accent-foreground: #c0caf5;
+    --destructive: #f7768e;
+    --border: #3b4261;
+    --input: #3b4261;
+    --ring: #7aa2f7;
+    --chart-1: #7aa2f7;
+    --chart-2: #9ece6a;
+    --chart-3: #e0af68;
+    --chart-4: #f7768e;
+    --chart-5: #bb9af7;
+    --sidebar: #24283b;
+    --sidebar-foreground: #c0caf5;
+    --sidebar-primary: #7aa2f7;
+    --sidebar-primary-foreground: #1a1b26;
+    --sidebar-accent: #2f334d;
+    --sidebar-accent-foreground: #c0caf5;
+    --sidebar-border: #3b4261;
+    --sidebar-ring: #7aa2f7;
+}
+
+/* Rosé Pine — muted rose on soft dark. */
+[data-theme="rose-pine"] {
+    --background: #191724;
+    --foreground: #e0def4;
+    --card: #1f1d2e;
+    --card-foreground: #e0def4;
+    --popover: #1f1d2e;
+    --popover-foreground: #e0def4;
+    --primary: #ebbcba;
+    --primary-foreground: #191724;
+    --secondary: #26233a;
+    --secondary-foreground: #e0def4;
+    --muted: #26233a;
+    --muted-foreground: #908caa;
+    --accent: #26233a;
+    --accent-foreground: #e0def4;
+    --destructive: #eb6f92;
+    --border: #403d52;
+    --input: #403d52;
+    --ring: #ebbcba;
+    --chart-1: #ebbcba;
+    --chart-2: #9ccfd8;
+    --chart-3: #f6c177;
+    --chart-4: #eb6f92;
+    --chart-5: #c4a7e7;
+    --sidebar: #1f1d2e;
+    --sidebar-foreground: #e0def4;
+    --sidebar-primary: #ebbcba;
+    --sidebar-primary-foreground: #191724;
+    --sidebar-accent: #26233a;
+    --sidebar-accent-foreground: #e0def4;
+    --sidebar-border: #403d52;
+    --sidebar-ring: #ebbcba;
+}
+
+/* Solarized Light — warm cream daylight. */
+[data-theme="solarized-light"] {
+    --background: #fdf6e3;
+    --foreground: #657b83;
+    --card: #eee8d5;
+    --card-foreground: #586e75;
+    --popover: #eee8d5;
+    --popover-foreground: #586e75;
+    --primary: #268bd2;
+    --primary-foreground: #fdf6e3;
+    --secondary: #eee8d5;
+    --secondary-foreground: #586e75;
+    --muted: #eee8d5;
+    --muted-foreground: #93a1a1;
+    --accent: #eee8d5;
+    --accent-foreground: #586e75;
+    --destructive: #dc322f;
+    --border: #ddd6c1;
+    --input: #ddd6c1;
+    --ring: #268bd2;
+    --chart-1: #268bd2;
+    --chart-2: #859900;
+    --chart-3: #b58900;
+    --chart-4: #dc322f;
+    --chart-5: #d33682;
+    --sidebar: #eee8d5;
+    --sidebar-foreground: #586e75;
+    --sidebar-primary: #268bd2;
+    --sidebar-primary-foreground: #fdf6e3;
+    --sidebar-accent: #e4ddc8;
+    --sidebar-accent-foreground: #586e75;
+    --sidebar-border: #ddd6c1;
+    --sidebar-ring: #268bd2;
+}
+
+/* Gruvbox Light — faded paper. */
+[data-theme="gruvbox-light"] {
+    --background: #fbf1c7;
+    --foreground: #3c3836;
+    --card: #ebdbb2;
+    --card-foreground: #3c3836;
+    --popover: #ebdbb2;
+    --popover-foreground: #3c3836;
+    --primary: #b57600;
+    --primary-foreground: #fbf1c7;
+    --secondary: #e6d7a3;
+    --secondary-foreground: #3c3836;
+    --muted: #e6d7a3;
+    --muted-foreground: #928374;
+    --accent: #e6d7a3;
+    --accent-foreground: #3c3836;
+    --destructive: #9d0006;
+    --border: #d5c791;
+    --input: #d5c791;
+    --ring: #b57600;
+    --chart-1: #79740e;
+    --chart-2: #427b58;
+    --chart-3: #b57600;
+    --chart-4: #9d0006;
+    --chart-5: #8f3f71;
+    --sidebar: #ebdbb2;
+    --sidebar-foreground: #3c3836;
+    --sidebar-primary: #b57600;
+    --sidebar-primary-foreground: #fbf1c7;
+    --sidebar-accent: #e6d7a3;
+    --sidebar-accent-foreground: #3c3836;
+    --sidebar-border: #d5c791;
+    --sidebar-ring: #b57600;
+}
+
+/* Paper Sepia — aged manuscript. */
+[data-theme="paper-sepia"] {
+    --background: #f5ecd7;
+    --foreground: #43361f;
+    --card: #ede0c8;
+    --card-foreground: #43361f;
+    --popover: #ede0c8;
+    --popover-foreground: #43361f;
+    --primary: #a3540d;
+    --primary-foreground: #f5ecd7;
+    --secondary: #e3d6b9;
+    --secondary-foreground: #43361f;
+    --muted: #e3d6b9;
+    --muted-foreground: #8a7a5c;
+    --accent: #e3d6b9;
+    --accent-foreground: #43361f;
+    --destructive: #a23b2e;
+    --border: #d9c9a5;
+    --input: #d9c9a5;
+    --ring: #a3540d;
+    --chart-1: #a3540d;
+    --chart-2: #6b7f3a;
+    --chart-3: #b98a2f;
+    --chart-4: #a23b2e;
+    --chart-5: #7d5a8c;
+    --sidebar: #ede0c8;
+    --sidebar-foreground: #43361f;
+    --sidebar-primary: #a3540d;
+    --sidebar-primary-foreground: #f5ecd7;
+    --sidebar-accent: #e3d6b9;
+    --sidebar-accent-foreground: #43361f;
+    --sidebar-border: #d9c9a5;
+    --sidebar-ring: #a3540d;
+}
+
+/* High Contrast Light — pure white, black ink. */
+[data-theme="high-contrast-light"] {
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #f2f2f2;
+    --card-foreground: #000000;
+    --popover: #f7f7f7;
+    --popover-foreground: #000000;
+    --primary: #005a9e;
+    --primary-foreground: #ffffff;
+    --secondary: #eeeeee;
+    --secondary-foreground: #000000;
+    --muted: #eeeeee;
+    --muted-foreground: #555555;
+    --accent: #eeeeee;
+    --accent-foreground: #000000;
+    --destructive: #b91c1c;
+    --border: #000000;
+    --input: #333333;
+    --ring: #005a9e;
+    --chart-1: #005a9e;
+    --chart-2: #116329;
+    --chart-3: #8a6116;
+    --chart-4: #b91c1c;
+    --chart-5: #6b21a8;
+    --sidebar: #f2f2f2;
+    --sidebar-foreground: #000000;
+    --sidebar-primary: #005a9e;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e2e2e2;
+    --sidebar-accent-foreground: #000000;
+    --sidebar-border: #000000;
+    --sidebar-ring: #005a9e;
+}
+
+/* High Contrast Dark — near-black, bright white. */
+[data-theme="high-contrast-dark"] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #0d0d0d;
+    --card-foreground: #ffffff;
+    --popover: #111111;
+    --popover-foreground: #ffffff;
+    --primary: #2ea043;
+    --primary-foreground: #000000;
+    --secondary: #1f1f1f;
+    --secondary-foreground: #ffffff;
+    --muted: #1f1f1f;
+    --muted-foreground: #c8c8c8;
+    --accent: #1f1f1f;
+    --accent-foreground: #ffffff;
+    --destructive: #ff4444;
+    --border: #ffffff;
+    --input: #cccccc;
+    --ring: #2ea043;
+    --chart-1: #2ea043;
+    --chart-2: #58a6ff;
+    --chart-3: #d29922;
+    --chart-4: #ff4444;
+    --chart-5: #bc8cff;
+    --sidebar: #0d0d0d;
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #2ea043;
+    --sidebar-primary-foreground: #000000;
+    --sidebar-accent: #1f1f1f;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #ffffff;
+    --sidebar-ring: #2ea043;
+}
+
+/* GitHub Light — GitHub's clean light interface. */
+[data-theme="github-light"] {
+    --background: #ffffff;
+    --foreground: #1f2328;
+    --card: #ffffff;
+    --card-foreground: #1f2328;
+    --popover: #ffffff;
+    --popover-foreground: #1f2328;
+    --primary: #0969da;
+    --primary-foreground: #ffffff;
+    --secondary: #f6f8fa;
+    --secondary-foreground: #1f2328;
+    --muted: #f6f8fa;
+    --muted-foreground: #656d76;
+    --accent: #ddf4ff;
+    --accent-foreground: #0969da;
+    --destructive: #cf222e;
+    --border: #d0d7de;
+    --input: #d0d7de;
+    --ring: #0969da;
+    --chart-1: #0969da;
+    --chart-2: #1a7f37;
+    --chart-3: #9a6700;
+    --chart-4: #bf3989;
+    --chart-5: #8250df;
+    --sidebar: #f6f8fa;
+    --sidebar-foreground: #1f2328;
+    --sidebar-primary: #0969da;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #ddf4ff;
+    --sidebar-accent-foreground: #0969da;
+    --sidebar-border: #d0d7de;
+    --sidebar-ring: #0969da;
+}
+
+/* GitHub Dark — GitHub's dark mode. */
+[data-theme="github-dark"] {
+    --background: #0d1117;
+    --foreground: #e6edf3;
+    --card: #161b22;
+    --card-foreground: #e6edf3;
+    --popover: #161b22;
+    --popover-foreground: #e6edf3;
+    --primary: #58a6ff;
+    --primary-foreground: #0d1117;
+    --secondary: #21262d;
+    --secondary-foreground: #e6edf3;
+    --muted: #21262d;
+    --muted-foreground: #8b949e;
+    --accent: #293341;
+    --accent-foreground: #58a6ff;
+    --destructive: #f85149;
+    --border: #30363d;
+    --input: #30363d;
+    --ring: #58a6ff;
+    --chart-1: #58a6ff;
+    --chart-2: #3fb950;
+    --chart-3: #d29922;
+    --chart-4: #db61a2;
+    --chart-5: #bc8cff;
+    --sidebar: #161b22;
+    --sidebar-foreground: #e6edf3;
+    --sidebar-primary: #58a6ff;
+    --sidebar-primary-foreground: #0d1117;
+    --sidebar-accent: #21262d;
+    --sidebar-accent-foreground: #e6edf3;
+    --sidebar-border: #30363d;
+    --sidebar-ring: #58a6ff;
+}
+
+/* Catppuccin Mocha — the soothing pastel dark. */
+[data-theme="catppuccin-mocha"] {
+    --background: #1e1e2e;
+    --foreground: #cdd6f4;
+    --card: #181825;
+    --card-foreground: #cdd6f4;
+    --popover: #181825;
+    --popover-foreground: #cdd6f4;
+    --primary: #cba6f7;
+    --primary-foreground: #1e1e2e;
+    --secondary: #313244;
+    --secondary-foreground: #cdd6f4;
+    --muted: #313244;
+    --muted-foreground: #9399b2;
+    --accent: #45475a;
+    --accent-foreground: #cdd6f4;
+    --destructive: #f38ba8;
+    --border: #45475a;
+    --input: #45475a;
+    --ring: #cba6f7;
+    --chart-1: #cba6f7;
+    --chart-2: #a6e3a1;
+    --chart-3: #f9e2af;
+    --chart-4: #89b4fa;
+    --chart-5: #fab387;
+    --sidebar: #181825;
+    --sidebar-foreground: #cdd6f4;
+    --sidebar-primary: #cba6f7;
+    --sidebar-primary-foreground: #1e1e2e;
+    --sidebar-accent: #313244;
+    --sidebar-accent-foreground: #cdd6f4;
+    --sidebar-border: #45475a;
+    --sidebar-ring: #cba6f7;
+}
+
+/* Catppuccin Latte — Catppuccin's daylight side. */
+[data-theme="catppuccin-latte"] {
+    --background: #eff1f5;
+    --foreground: #4c4f69;
+    --card: #e6e9ef;
+    --card-foreground: #4c4f69;
+    --popover: #e6e9ef;
+    --popover-foreground: #4c4f69;
+    --primary: #8839ef;
+    --primary-foreground: #eff1f5;
+    --secondary: #ccd0da;
+    --secondary-foreground: #4c4f69;
+    --muted: #ccd0da;
+    --muted-foreground: #6c6f85;
+    --accent: #dce0e8;
+    --accent-foreground: #4c4f69;
+    --destructive: #d20f39;
+    --border: #bcc0cc;
+    --input: #bcc0cc;
+    --ring: #8839ef;
+    --chart-1: #8839ef;
+    --chart-2: #40a02f;
+    --chart-3: #df8e1d;
+    --chart-4: #1e66f5;
+    --chart-5: #fe640b;
+    --sidebar: #e6e9ef;
+    --sidebar-foreground: #4c4f69;
+    --sidebar-primary: #8839ef;
+    --sidebar-primary-foreground: #eff1f5;
+    --sidebar-accent: #ccd0da;
+    --sidebar-accent-foreground: #4c4f69;
+    --sidebar-border: #bcc0cc;
+    --sidebar-ring: #8839ef;
+}
+
+/* Ayu Dark — orange accents on slate blue. */
+[data-theme="ayu-dark"] {
+    --background: #0b0e14;
+    --foreground: #bfbdb6;
+    --card: #111521;
+    --card-foreground: #bfbdb6;
+    --popover: #111521;
+    --popover-foreground: #bfbdb6;
+    --primary: #ff8f40;
+    --primary-foreground: #0b0e14;
+    --secondary: #1c2129;
+    --secondary-foreground: #bfbdb6;
+    --muted: #1c2129;
+    --muted-foreground: #7a8091;
+    --accent: #1f2630;
+    --accent-foreground: #d5d8da;
+    --destructive: #f07178;
+    --border: #22262e;
+    --input: #22262e;
+    --ring: #ff8f40;
+    --chart-1: #ff8f40;
+    --chart-2: #aad94c;
+    --chart-3: #d2a6ff;
+    --chart-4: #73d0ff;
+    --chart-5: #f29e74;
+    --sidebar: #111521;
+    --sidebar-foreground: #bfbdb6;
+    --sidebar-primary: #ff8f40;
+    --sidebar-primary-foreground: #0b0e14;
+    --sidebar-accent: #1c2129;
+    --sidebar-accent-foreground: #bfbdb6;
+    --sidebar-border: #22262e;
+    --sidebar-ring: #ff8f40;
+}
+
+/* Everforest Dark — green-toned comfort. */
+[data-theme="everforest-dark"] {
+    --background: #2d353b;
+    --foreground: #d3c6aa;
+    --card: #343f44;
+    --card-foreground: #d3c6aa;
+    --popover: #343f44;
+    --popover-foreground: #d3c6aa;
+    --primary: #a7c080;
+    --primary-foreground: #2d353b;
+    --secondary: #3d484d;
+    --secondary-foreground: #d3c6aa;
+    --muted: #3d484d;
+    --muted-foreground: #9da9a0;
+    --accent: #414b50;
+    --accent-foreground: #d3c6aa;
+    --destructive: #e67e80;
+    --border: #414b50;
+    --input: #414b50;
+    --ring: #a7c080;
+    --chart-1: #a7c080;
+    --chart-2: #dbbc7f;
+    --chart-3: #83c092;
+    --chart-4: #d699b6;
+    --chart-5: #e69875;
+    --sidebar: #343f44;
+    --sidebar-foreground: #d3c6aa;
+    --sidebar-primary: #a7c080;
+    --sidebar-primary-foreground: #2d353b;
+    --sidebar-accent: #3d484d;
+    --sidebar-accent-foreground: #d3c6aa;
+    --sidebar-border: #414b50;
+    --sidebar-ring: #a7c080;
+}
+
+/* Kanagawa Wave — blue-ink sumi-e tones. */
+[data-theme="kanagawa-wave"] {
+    --background: #1f1f28;
+    --foreground: #dcd7ba;
+    --card: #16161d;
+    --card-foreground: #dcd7ba;
+    --popover: #16161d;
+    --popover-foreground: #dcd7ba;
+    --primary: #7e9cd8;
+    --primary-foreground: #1f1f28;
+    --secondary: #2a2a37;
+    --secondary-foreground: #dcd7ba;
+    --muted: #2a2a37;
+    --muted-foreground: #727169;
+    --accent: #22323f;
+    --accent-foreground: #dcd7ba;
+    --destructive: #e46876;
+    --border: #2a2a37;
+    --input: #2a2a37;
+    --ring: #7e9cd8;
+    --chart-1: #7e9cd8;
+    --chart-2: #98bb6c;
+    --chart-3: #ffa066;
+    --chart-4: #957fb8;
+    --chart-5: #d27e99;
+    --sidebar: #16161d;
+    --sidebar-foreground: #dcd7ba;
+    --sidebar-primary: #7e9cd8;
+    --sidebar-primary-foreground: #1f1f28;
+    --sidebar-accent: #2a2a37;
+    --sidebar-accent-foreground: #dcd7ba;
+    --sidebar-border: #2a2a37;
+    --sidebar-ring: #7e9cd8;
+}
+
+/* Synthwave '84 — neon retro-future. */
+[data-theme="synthwave-84"] {
+    --background: #241b2f;
+    --foreground: #f8f8f2;
+    --card: #1a1721;
+    --card-foreground: #f8f8f2;
+    --popover: #1a1721;
+    --popover-foreground: #f8f8f2;
+    --primary: #f97a72;
+    --primary-foreground: #241b2f;
+    --secondary: #2d2440;
+    --secondary-foreground: #f8f8f2;
+    --muted: #2d2440;
+    --muted-foreground: #b1a5c4;
+    --accent: #34294f;
+    --accent-foreground: #fef6ff;
+    --destructive: #fb7185;
+    --border: #34294f;
+    --input: #34294f;
+    --ring: #f97a72;
+    --chart-1: #f97a72;
+    --chart-2: #f5d67b;
+    --chart-3: #a48fe2;
+    --chart-4: #6ec9f0;
+    --chart-5: #ff7edb;
+    --sidebar: #1a1721;
+    --sidebar-foreground: #f8f8f2;
+    --sidebar-primary: #f97a72;
+    --sidebar-primary-foreground: #241b2f;
+    --sidebar-accent: #2d2440;
+    --sidebar-accent-foreground: #f8f8f2;
+    --sidebar-border: #34294f;
+    --sidebar-ring: #f97a72;
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* ─── Legacy-browser gate (kill-switch + static notice) ───────────
+   The pre-hydration script in layout.tsx stamps
+   <html data-browser-unsupported="1"> and injects
+   #praxis-legacy-notice for browsers too old to run the IDE. This
+   switch hides every app element (the React tree never mounts there)
+   and styles the static notice card so it is the ONLY thing on
+   screen. Pure CSS — no JS required after the gate fires. */
+[data-browser-unsupported="1"] body > *:not(#praxis-legacy-notice) {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+#praxis-legacy-notice {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    background: #ffffff !important;
+    color: #18181b !important;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif !important;
+    box-sizing: border-box !important;
+}
+
+#praxis-legacy-notice .lg-card {
+    max-width: 520px;
+    width: 100%;
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+    padding: 28px;
+    background: #fafafa;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+#praxis-legacy-notice .lg-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 2px solid #fca5a5;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+
+#praxis-legacy-notice h1 {
+    margin: 0 0 6px !important;
+    font-size: 19px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+#praxis-legacy-notice p {
+    margin: 0 0 10px !important;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #3f3f46;
+}
+
+#praxis-legacy-notice p.lg-small {
+    font-size: 12px;
+    color: #71717a;
+}
+
+#praxis-legacy-notice a {
+    color: #059669;
+    text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+    #praxis-legacy-notice {
+        background: #09090b !important;
+        color: #f4f4f5 !important;
+    }
+
+    #praxis-legacy-notice .lg-card {
+        border-color: #27272a;
+        background: #18181b;
+    }
+
+    #praxis-legacy-notice p {
+        color: #d4d4d8;
+    }
+
+    #praxis-legacy-notice p.lg-small {
+        color: #a1a1aa;
+    }
+}
+
+/* ─── Atkinson Hyperlegible — accessibility face for chat text ────
+   The AI chat text prefers Atkinson Hyperlegible (letterforms drawn
+   for low vision: disambiguated 0/O, I/l, b/d, 6/9).
+
+   OFFLINE HONESTY: no Atkinson woff2 ships in this repo (src/fonts/
+   holds JetBrains Mono only) and none exists under /usr/share/fonts
+   on the build host — downloading one is not allowed and faking a
+   file is worse than shipping none. So --font-hyperlegible is a
+   STACK: on machines where the user installed Atkinson Hyperlegible
+   (free from Braille Institute) the app picks it up automatically;
+   otherwise it degrades to the app's Geist sans. Settings-independent
+   — it applies to chat text unconditionally (.ai-chat-bubble-* /
+   .ai-chat-markdown). If a woff2 is ever bundled, wire it with
+   next/font/local in layout.tsx and point this variable at the
+   generated family instead of deleting the fallback. */
+:root {
+    --font-hyperlegible: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+/* Re-declared on body (where the geist package defines
+   --font-geist-sans) so the Geist fallback resolves reliably. */
+body {
+    --font-hyperlegible: "Atkinson Hyperlegible", var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.ai-chat-bubble-user,
+.ai-chat-bubble-assistant,
+.ai-chat-markdown {
+    font-family: var(--font-hyperlegible);
+}
+
+/* ─── AI chat sidebar — a11y + RTL physical adjustments ─────────── */
+
+/* Icon-only buttons (search / export / clear / close-search / tuning
+   trigger) get an unconditional visible focus ring for keyboard
+   users — matches the [data-enhanced-focus] pattern but does not
+   depend on the setting being on. */
+.ai-chat-icon-btn:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+}
+
+/* Conversation-search hits — inherit the bubble's text color (the
+   default UA mark would paint black-on-primary for user bubbles);
+   the amber tint rides the Tailwind classes on the <mark>. */
+.ai-chat-search-mark {
+    color: inherit;
+}
+
+[data-high-contrast="true"] .ai-chat-search-mark {
+    background-color: #00ff88 !important;
+    color: #000000 !important;
+}
+
+/* RTL — the app shell flips via [dir="rtl"] (i18n-react's
+   useDocumentDirection); these rules mirror the remaining PHYSICAL
+   properties inside the chat sidebar that logical utilities can't
+   express (the rounded-ee/es bubble corners, ps-* and ms-* margins
+   and pe-* paddings are already logical and flip for free). */
+/* The Sheet's built-in close button is hard-positioned right-4 —
+   mirror it to the left edge when the sheet opens from the left. */
+[dir="rtl"] .ai-chat-sheet > button {
+    right: auto;
+    left: 1rem;
+}
+
+/* Blockquote bar: Tailwind has no logical border-side utility here,
+   so the physical border-l-2 is swapped to border-right in RTL (the
+   ps-2.5 padding beside it is already logical). */
+[dir="rtl"] .ai-chat-markdown blockquote,
+[dir="rtl"] .ai-chat-blockquote {
+    border-left-width: 0;
+    border-right-width: 2px;
+}
+
+/* The "Apply" chip on assistant code blocks (absolute right-1). */
+[dir="rtl"] .ai-chat-code-apply {
+    right: auto;
+    left: 0.25rem;
+}
+
+/* (Assistant table headers use the logical text-start utility in the
+   markdown component map, so no extra rule is needed for them; the
+   bubbles' tail corners use rounded-ee/rounded-es likewise.) */
+
+/* ─── High-contrast accessibility theme ────────────────────────────
+   Toggled by setting `data-high-contrast="true"` on the <html>
+   element (set by an inline <head> script in layout.tsx before
+   hydration, and kept in sync with the `highContrastMode` setting
+   from page.tsx). Overrides the default / dark color tokens with
+   pure-black / pure-white / bright-green for maximum legibility. */
+[data-high-contrast="true"] {
+    --background: #000000;
+    --foreground: #ffffff;
+    --card: #0a0a0a;
+    --primary: #00ff88;
+    --secondary: #333333;
+    --muted: #1a1a1a;
+    --muted-foreground: #cccccc;
+    --border: #444444;
+    --input: #222222;
+    --ring: #00ff88;
+    --destructive: #ff4444;
+}
+
+[data-high-contrast="true"] body {
+    font-size: 15px;
+}
+
+/* Thicker borders — but only for elements that actually have a border
+   class. The previous universal `*` selector applied 2px borders to
+   borderless spacers, icons, and flex containers, causing layout
+   shifts + double-borders on adjacent cells. */
+[data-high-contrast="true"] .border,
+[data-high-contrast="true"] [class*="border-"],
+[data-high-contrast="true"] [class*="divide-"] > * {
+    border-width: 2px !important;
+}
+
+/* Bold focus rings for keyboard navigation. */
+[data-high-contrast="true"] *:focus-visible {
+    outline: 3px solid #00ff88 !important;
+    outline-offset: 2px;
+}
+
+/* ─── Accessibility settings (#accessibility-effects) ───────────────
+   Each of the four settings below is toggled by setting a data-*
+   attribute on the <html> element. The attributes are applied
+   pre-hydration by an inline <head> script in layout.tsx (to avoid
+   a flash of the unstyled mode) and kept in sync with the matching
+   setting from page.tsx via a useEffect. */
+
+/* reduceMotion — disable animations and transitions globally. */
+[data-reduce-motion="true"] * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* largeTextMode — bump the root font size by 25% (affects rem-based
+   typography across the whole app). */
+[data-large-text="true"] {
+    font-size: 125%;
+}
+
+/* enhancedFocusIndicators — thicker, more visible focus rings for
+   keyboard navigation. Uses the emerald accent color. */
+[data-enhanced-focus="true"] *:focus-visible {
+    outline: 3px solid #059669 !important;
+    outline-offset: 2px !important;
+}
+
+/* screenReaderMode — when enabled, the app surfaces extra ARIA
+   affordances and visible cues for assistive-tech users:
+
+     • a "skip to main content" link is shown on focus
+     • icon-only buttons expose their text labels as visible-on-focus
+       "sr-only" hints (so a screen reader announces them and a
+       sighted keyboard user sees them when tabbing)
+     • every focusable element gets a strong focus ring (so keyboard
+       users can always see where they are even without enabling the
+       dedicated "enhanced focus" toggle)
+     • a small persistent badge in the bottom-right corner reminds the
+       user that screen-reader mode is on (so they don't wonder why
+       the UI looks different)
+     • long-running regions (the output panel, the diagnostics panel)
+       get aria-live="polite" so new output is announced. */
+[data-screen-reader="true"] *:focus-visible {
+    outline: 2px solid var(--foreground) !important;
+    outline-offset: 2px !important;
+}
+
+/* sr-only-focusable — visually hidden until focused. This is the
+   standard "skip to main content" link pattern: the link is
+   invisible by default but appears as a fixed-position button at
+   the top-left when the user tabs to it. Applies REGARDLESS of
+   whether screen-reader mode is enabled, so keyboard-only users
+   get the affordance without having to opt in. */
+.sr-only-focusable:not(:focus):not(:focus-within) {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:focus-within {
+    position: fixed !important;
+    top: 8px;
+    left: 8px;
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    padding: 8px 14px;
+    background: var(--background);
+    color: var(--foreground);
+    border: 2px solid var(--foreground);
+    border-radius: 6px;
+    font-size: 13px;
+    clip: auto;
+    overflow: visible;
+}
+
+[data-screen-reader="true"] .sr-badge {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 9999;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background: var(--foreground);
+    color: var(--background);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    /* pointer-events: none removed — the badge is now a <button> that
+       dismisses screen-reader mode on click, so it must accept pointer
+       events. Keyboard users can also Tab to it and press Enter. */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-screen-reader="true"] .sr-badge:hover {
+    background: var(--foreground);
+    color: var(--background);
+    opacity: 0.85;
+}
+
+[data-screen-reader="true"] .sr-badge:focus-visible {
+    outline: 3px solid #10b981;
+    outline-offset: 2px;
+}
+
+/* When screen-reader mode is on, button titles (which are already
+   set on most icon-only buttons) are also exposed as visible-on-focus
+   text inside the button. We do this with a generated pseudo-element
+   so we don't have to touch every call site. */
+[data-screen-reader="true"] button[aria-label]:focus-visible::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--foreground);
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ─── Extended accessibility modes (#a11y-extended) ─────────────────
+   Each mode is gated on a data-* attribute on <html>, set by an
+   inline pre-hydration script + kept in sync from page.tsx. */
+
+/* dyslexiaFriendlyMode — wider letter-spacing + line-height + a
+   preference for the Atkinson Hyperlegible font (when installed).
+   The increased spacing helps readers with dyslexia distinguish
+   mirror-symmetric glyphs (b/d, p/q, I/l, 0/O). Now rides the shared
+   --font-hyperlegible stack (see the Atkinson section above). */
+[data-dyslexia-friendly="true"] {
+    letter-spacing: 0.04em;
+    word-spacing: 0.08em;
+    line-height: 1.7;
+    font-family: var(--font-hyperlegible);
+}
+
+[data-dyslexia-friendly="true"] code,
+[data-dyslexia-friendly="true"] pre,
+[data-dyslexia-friendly="true"] .font-mono {
+    letter-spacing: 0.02em;
+}
+
+/* Override the inline `line-height: 1.6` set on the code viewer's
+   textarea + Prism backdrop so dyslexia mode's wider line-height
+   actually applies to code. Inline styles win over regular CSS rules,
+   so we need !important here. */
+[data-dyslexia-friendly="true"] textarea,
+[data-dyslexia-friendly="true"] pre,
+[data-dyslexia-friendly="true"] [class*="font-mono"] {
+    line-height: 1.8 !important;
+}
+
+/* colorBlindMode — swap red/green status indicators for blue/orange
+   so they're distinguishable to users with red-green color blindness
+   (deuteranopia / protanopia, the most common forms). We override
+   EVERY emerald/red shade the app uses (not just 500) so status
+   dots, badges, squiggles, and focus rings all pick up the new
+   colors. Swapping only the 500-level classes would miss the
+   400/600/dark/opacity variants. */
+[data-color-blind="true"] {
+    --cb-success: #2563eb; /* blue-600 */
+    --cb-success-fg: #ffffff;
+    --cb-error: #ea580c; /* orange-600 */
+    --cb-error-fg: #ffffff;
+}
+
+/* Emerald (success) → blue, all shades + opacity variants. */
+[data-color-blind="true"] .bg-emerald-500,
+[data-color-blind="true"] .bg-emerald-400,
+[data-color-blind="true"] .bg-emerald-600 {
+    background-color: var(--cb-success) !important;
+}
+
+[data-color-blind="true"] .text-emerald-500,
+[data-color-blind="true"] .text-emerald-400,
+[data-color-blind="true"] .text-emerald-600,
+[data-color-blind="true"] .dark\:text-emerald-400:is(.dark *),
+[data-color-blind="true"] .dark\:text-emerald-300:is(.dark *) {
+    color: var(--cb-success) !important;
+}
+
+[data-color-blind="true"] .bg-emerald-500\/50,
+[data-color-blind="true"] .bg-emerald-500\/15,
+[data-color-blind="true"] .bg-emerald-500\/10 {
+    background-color: color-mix(in srgb, var(--cb-success) 50%, transparent) !important;
+}
+
+[data-color-blind="true"] .border-emerald-500,
+[data-color-blind="true"] .border-emerald-500\/40 {
+    border-color: var(--cb-success) !important;
+}
+
+[data-color-blind="true"] .fill-emerald-500 {
+    fill: var(--cb-success) !important;
+}
+
+/* Red (error) → orange, all shades + opacity variants. */
+[data-color-blind="true"] .bg-red-500,
+[data-color-blind="true"] .bg-red-400,
+[data-color-blind="true"] .bg-red-600 {
+    background-color: var(--cb-error) !important;
+}
+
+[data-color-blind="true"] .text-red-500,
+[data-color-blind="true"] .text-red-400,
+[data-color-blind="true"] .text-red-600,
+[data-color-blind="true"] .dark\:text-red-400:is(.dark *) {
+    color: var(--cb-error) !important;
+}
+
+[data-color-blind="true"] .bg-red-500\/10,
+[data-color-blind="true"] .bg-red-500\/20 {
+    background-color: color-mix(in srgb, var(--cb-error) 15%, transparent) !important;
+}
+
+[data-color-blind="true"] .fill-red-500 {
+    fill: var(--cb-error) !important;
+}
+
+/* alwaysShowShortcutHints — surface kbd hints inline next to menu
+   items instead of only in tooltips. The hints are rendered by
+   components in kbd.badge elements with the .shortcut-hint class;
+   when this mode is off, they're hidden. */
+[data-always-show-shortcuts="true"] .shortcut-hint {
+    display: inline-flex !important;
+}
+
+.shortcut-hint {
+    display: none;
+}
+
+/* stickyCursorIndicator — the code viewer shows a faint left-border
+   marker on the current line even when not focused, so users with
+   screen magnifiers can track the caret. The marker is rendered by
+   the code viewer when this attr is set; the actual styling is here
+   so users can override it. */
+[data-sticky-cursor="true"] .sticky-cursor-line {
+    border-left: 2px solid var(--foreground);
+    margin-left: -2px;
+    opacity: 0.6;
+}
+
+/* wrapTabNavigation — when on, the browser's Tab key wraps from the
+   last focusable element back to the first. This is purely a JS
+   behavior (in page.tsx's keydown handler) — the CSS just signals
+   the mode is active for any consumer that wants to adapt. */
+[data-wrap-tab="true"] { /* marker attr; behavior is in JS */
+}
+
+/* highlightCurrentLine — the code viewer draws a subtle background
+   on the line under the mouse / caret. */
+[data-highlight-current-line="true"] .current-line-highlight {
+    background: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+
+/* showWhitespace — surface trailing whitespace + tab/space
+   differences in the code viewer. */
+[data-show-whitespace="true"] .whitespace-marker {
+    display: inline !important;
+}
+
+.whitespace-marker {
+    display: none;
+}
+
+/* ─── fresh-favorite pop animation ─────────────────────────
+   When a file is added to favorites, its star pops once (a single
+   bounce — not a permanent wiggle) and the row keeps an amber ring +
+   bold name for the configured number of seconds (Settings → Editor →
+   "New-favorite highlight (seconds)"), then reverts to a plain star
+   like every other favorite. Disabled under prefers-reduced-motion. */
+@keyframes fav-pop {
+    0% {
+        transform: scale(1);
+    }
+    35% {
+        transform: scale(1.55) rotate(-8deg);
+    }
+    65% {
+        transform: scale(0.9) rotate(4deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fav-pop {
+    animation: fav-pop 0.55s ease-out 1;
+    transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fav-pop {
+        animation: none;
+    }
+}
+
+/* ─── spell-check misspelling marks ────────────────────────
+   Misspelled words render as .spell-miss spans; the wavy red line
+   itself is an inline SVG CHILD element (lib/spell-marks.tsx →
+   WaveUnderline), not a background-image or text-decoration —
+   both older paint paths could be left at a stale screen position
+   while the element scrolled ("zigzag fixed on the screen while
+   the words move"). A DOM child composites with its parent's
+   layer atomically, so the wave stays glued to the word in every
+   scroll state (view / edit / collapsed preview). The class below
+   only carries the interactive affordances. */
+.spell-miss {
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 120ms ease;
+}
+
+.spell-miss:hover {
+    background-color: rgba(239, 68, 68, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .spell-miss {
+        transition: none;
+    }
+}
+
+/* ─── output virtualization ──────────────────────────
+   The output panel can render 20,000+ lines after a chatty script
+   (the 2 MB cap allows it). Rather than windowing the DOM (which
+   breaks Ctrl+F, select-all and copy), each output block opts into
+   browser-native virtualization: content-visibility: auto skips
+   layout + paint for offscreen blocks while keeping them in the DOM.
+   contain-intrinsic-size gives the browser a line-height estimate so
+   the scrollbar doesn't jump while scrolling fast. */
+.cv-line {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 20rem;
+}
+
+/* ─── media gallery slideshow transitions ───────────
+   Applied per image swap (keyed remount). Both respect
+   prefers-reduced-motion via the media query below. */
+@keyframes gallery-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes gallery-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.gallery-fade-in {
+    animation: gallery-fade-in 320ms ease-out 1;
+}
+
+.gallery-slide-in {
+    animation: gallery-slide-in 320ms ease-out 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-fade-in, .gallery-slide-in {
+        animation: none;
+    }
+}
+
+/* ─── skeleton shimmer sweep ─────────────────────────────
+   The kind-aware skeletons (file-viewer FileSkeleton) already
+   pulse; this adds a slow gradient sweep across every skeleton bar
+   so the loading state visibly travels left→right (the classic
+   shimmer). Applied on top of animate-pulse; disabled under
+   prefers-reduced-motion. */
+/* The sweep runs on the COMPOSITOR: the gradient rides an ::after
+   overlay animated with transform: translateX, never
+   background-position. A background-position animation is a MAIN
+   THREAD animation — while a large/long file's parse + Prism
+   tokenize blocks the main thread, every skeleton bar would freeze
+   mid sweep. Transform animations keep running through main-thread blockage,
+   so the shimmer keeps moving no matter how heavy the load is.
+   The bar needs overflow: hidden so the overlay never spills. */
+@keyframes praxis-shimmer {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.praxis-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.praxis-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            100deg,
+            transparent 38%,
+            rgba(148, 163, 184, 0.22) 50%,
+            transparent 62%
+    );
+    animation: praxis-shimmer 1.5s linear infinite;
+    will-change: transform;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .praxis-shimmer::after {
+        animation: none;
+        content: none;
+    }
+}
+
+/* ─── settings dialog — smooth config-tab switch ─────────────
+   The active tab panel fades + settles into place, a soft cross-fade
+   between the config tabs instead of a hard swap. A touch longer and
+   on a gentler ease-out curve than the original 180ms linear-ish
+   snap — the incoming panel drifts up 6px and eases out, which reads
+   as one continuous motion. The section jump bar chip row fades in
+   with the same curve (it re-populates on every tab switch).
+   Compositor-only (opacity + transform); skipped entirely under
+   prefers-reduced-motion. */
+@keyframes praxis-tab-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.settings-tabs-host > [role="tabpanel"][data-state="active"] {
+    animation: praxis-tab-in 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The section jump bar (one chip row per active tab) fades in with
+   the same curve so the whole pinned header settles together. */
+[data-section-jump-bar="true"] {
+    animation: praxis-tab-in 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .settings-tabs-host > [role="tabpanel"][data-state="active"] {
+        animation: none;
+    }
+
+    [data-section-jump-bar="true"] {
+        animation: none;
+    }
+}
+
+/* ─── prism token vs Tailwind utility collision guard ────────
+   Syntax-highlighted viewers render spans carrying PRISM token
+   class names ("token table" for a TOML table header, "token key",
+   "token string", …). Tailwind generates display utilities with the
+   SAME names — ".table { display: table }" — so a TOML table header
+   span turns into a block-level table box, breaking the inline flow:
+   the header drops to its own line hugging the number column and
+   every following line number shifts — scrambled spacing and line
+   numbering in TOML files. Inside any syntax
+   viewer every token span is inline text — force it back. */
+pre span.token {
+    display: inline;
+}
+
+/* ─── GitHub-grade Markdown rendering (`.md-github`) ──────────
+   Mirrors github.com's markdown CSS: bordered tables with a header
+   row + zebra striping, inline-code chips, task-list checkboxes,
+   GitHub alert callouts ([!NOTE] / [!TIP] / [!IMPORTANT] /
+   [!WARNING] / [!CAUTION]), kbd keys, heading anchors. Used by the
+   MarkdownGithub component (file viewer, studio preview, notebook
+   cells, AI chat) instead of relying on prose defaults alone. */
+.md-github {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    word-wrap: break-word;
+}
+
+.md-github > *:first-child {
+    margin-top: 0 !important;
+}
+
+.md-github > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.md-github h1, .md-github h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border);
+}
+
+.md-github h1 {
+    font-size: 1.55em;
+    font-weight: 600;
+    margin: 1.4em 0 0.6em;
+}
+
+.md-github h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 1.3em 0 0.55em;
+}
+
+.md-github h3 {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin: 1.2em 0 0.5em;
+}
+
+.md-github h4, .md-github h5, .md-github h6 {
+    font-weight: 600;
+    margin: 1.1em 0 0.45em;
+}
+
+.md-github h4 {
+    font-size: 1em;
+}
+
+.md-github h5 {
+    font-size: 0.92em;
+}
+
+.md-github h6 {
+    font-size: 0.86em;
+    color: var(--muted-foreground);
+}
+
+.md-github p {
+    margin: 0.6em 0;
+}
+
+.md-github a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.md-github a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* ── tables: GitHub's look — full borders, header background,
+   striped rows, comfortable cell padding. ───────────────────── */
+.md-github table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0.9em 0;
+    font-size: 0.92em;
+}
+
+.md-github table th, .md-github table td {
+    border: 1px solid var(--border);
+    padding: 6px 13px;
+}
+
+.md-github table th {
+    background: color-mix(in oklab, var(--muted) 65%, transparent);
+    font-weight: 600;
+}
+
+.md-github table tr:nth-child(2n) td {
+    background: color-mix(in oklab, var(--muted) 35%, transparent);
+}
+
+.md-github table img {
+    background-color: transparent;
+}
+
+/* ── inline code: GitHub's chip (numbers/spaces included —
+   `10 20 30` renders as one bordered token, never as prose). ── */
+.md-github code:not(pre code) {
+    padding: 0.2em 0.4em;
+    margin: 0 0.1em;
+    font-size: 85%;
+    font-family: var(--font-jb-mono), monospace;
+    background-color: color-mix(in oklab, var(--muted-foreground) 14%, transparent);
+    border-radius: 6px;
+}
+
+.md-github pre {
+    margin: 0.9em 0;
+}
+
+.md-github pre code {
+    font-family: var(--font-jb-mono), monospace;
+    font-size: 0.85rem;
+}
+
+.md-github blockquote {
+    margin: 0.9em 0;
+    padding: 0 1em;
+    color: var(--muted-foreground);
+    border-left: 0.25em solid var(--border);
+}
+
+.md-github ul, .md-github ol {
+    margin: 0.6em 0;
+    padding-left: 2em;
+}
+
+.md-github li {
+    margin: 0.25em 0;
+}
+
+.md-github li > p {
+    margin: 0.35em 0;
+}
+
+/* task lists — real checkbox glyphs, aligned like GitHub's. */
+.md-github li.md-task {
+    list-style: none;
+    margin-left: -1.4em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+}
+
+.md-github li.md-task::before {
+    content: none;
+}
+
+.md-github hr {
+    height: 1px;
+    margin: 1.6em 0;
+    border: 0;
+    background-color: var(--border);
+}
+
+.md-github img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 0.5em 0;
+}
+
+.md-github kbd {
+    display: inline-block;
+    padding: 3px 6px;
+    font-size: 80%;
+    font-family: var(--font-jb-mono), monospace;
+    line-height: normal;
+    color: var(--foreground);
+    background-color: color-mix(in oklab, var(--muted) 70%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 var(--border);
+}
+
+.md-github .footnotes {
+    font-size: 0.85em;
+    color: var(--muted-foreground);
+}
+
+.md-github sup a {
+    text-decoration: none;
+}
+
+/* ── GitHub alert callouts — [!NOTE] / [!TIP] / [!IMPORTANT] /
+   [!WARNING] / [!CAUTION] blockquotes render as colored boxes. */
+.md-github .md-alert {
+    margin: 0.9em 0;
+    padding: 0.65em 1em;
+    border-left: 0.35em solid var(--md-alert-color, var(--border));
+    border-radius: 0 6px 6px 0;
+    background-color: color-mix(in oklab, var(--md-alert-color, var(--muted)) 9%, transparent);
+}
+
+.md-github .md-alert > .md-alert-title {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    margin-bottom: 0.15em;
+    font-weight: 600;
+    font-size: 0.95em;
+    color: var(--md-alert-color);
+    stroke: currentColor;
+}
+
+.md-github .md-alert > .md-alert-title svg {
+    fill: currentColor;
+}
+
+.md-github .md-alert p {
+    margin: 0.3em 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   v3 THEME PACK — 12 new interface themes (7 light + 5 dark),
+   matching the UI_THEMES registry additions. Blocks sit at the END
+   of the sheet so they win the cascade over both the light base and
+   the .dark block for their family.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* VS Code Light — Visual Studio's default Light+ (light family). */
+[data-theme="vscode-light"] {
+    --background: #ffffff;
+    --foreground: #3b3b3b;
+    --card: #f3f3f3;
+    --card-foreground: #3b3b3b;
+    --popover: #ffffff;
+    --popover-foreground: #3b3b3b;
+    --primary: #007acc;
+    --primary-foreground: #ffffff;
+    --secondary: #e8e8e8;
+    --secondary-foreground: #3b3b3b;
+    --muted: #e8e8e8;
+    --muted-foreground: #6f6f6f;
+    --accent: #e8e8e8;
+    --accent-foreground: #007acc;
+    --destructive: #cd3131;
+    --border: #e0e0e0;
+    --input: #d4d4d4;
+    --ring: #007acc;
+    --chart-1: #007acc;
+    --chart-2: #2bac00;
+    --chart-3: #f9a825;
+    --chart-4: #cd3131;
+    --chart-5: #6b4fbb;
+    --sidebar: #f3f3f3;
+    --sidebar-foreground: #3b3b3b;
+    --sidebar-primary: #007acc;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e8e8e8;
+    --sidebar-accent-foreground: #007acc;
+    --sidebar-border: #e0e0e0;
+    --sidebar-ring: #007acc;
+}
+
+/* One Light — Atom's balanced light (light family). */
+[data-theme="one-light"] {
+    --background: #fafafa;
+    --foreground: #383a42;
+    --card: #f0f0f0;
+    --card-foreground: #383a42;
+    --popover: #ffffff;
+    --popover-foreground: #383a42;
+    --primary: #4078f2;
+    --primary-foreground: #ffffff;
+    --secondary: #e9e9ea;
+    --secondary-foreground: #383a42;
+    --muted: #e9e9ea;
+    --muted-foreground: #868992;
+    --accent: #e9e9ea;
+    --accent-foreground: #383a42;
+    --destructive: #e45649;
+    --border: #dcdde0;
+    --input: #d4d5d8;
+    --ring: #4078f2;
+    --chart-1: #4078f2;
+    --chart-2: #50a14f;
+    --chart-3: #c18401;
+    --chart-4: #e45649;
+    --chart-5: #a626a4;
+    --sidebar: #f0f0f0;
+    --sidebar-foreground: #383a42;
+    --sidebar-primary: #4078f2;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e9e9ea;
+    --sidebar-accent-foreground: #383a42;
+    --sidebar-border: #dcdde0;
+    --sidebar-ring: #4078f2;
+}
+
+/* Quiet Light — VS Code's warm quiet light (light family). */
+[data-theme="quiet-light"] {
+    --background: #fdf6f3;
+    --foreground: #333333;
+    --card: #f5ece9;
+    --card-foreground: #333333;
+    --popover: #fdf6f3;
+    --popover-foreground: #333333;
+    --primary: #a5583e;
+    --primary-foreground: #fdf6f3;
+    --secondary: #ede2de;
+    --secondary-foreground: #4a3f3a;
+    --muted: #ede2de;
+    --muted-foreground: #7d6f68;
+    --accent: #ede2de;
+    --accent-foreground: #4a3f3a;
+    --destructive: #b35e5e;
+    --border: #e8d9d3;
+    --input: #ddccc5;
+    --ring: #b85252;
+    --chart-1: #b85252;
+    --chart-2: #7a9a5b;
+    --chart-3: #c29545;
+    --chart-4: #9a5ea8;
+    --chart-5: #5286a0;
+    --sidebar: #f5ece9;
+    --sidebar-foreground: #333333;
+    --sidebar-primary: #b85252;
+    --sidebar-primary-foreground: #fdf6f3;
+    --sidebar-accent: #ede2de;
+    --sidebar-accent-foreground: #4a3f3a;
+    --sidebar-border: #e8d9d3;
+    --sidebar-ring: #b85252;
+}
+
+/* Nord Light — the snowstorm side of Nord (light family). */
+[data-theme="nord-light"] {
+    --background: #eceff4;
+    --foreground: #2e3440;
+    --card: #e5e9f0;
+    --card-foreground: #2e3440;
+    --popover: #f2f4f8;
+    --popover-foreground: #2e3440;
+    --primary: #5e81ac;
+    --primary-foreground: #eceff4;
+    --secondary: #dbe2ec;
+    --secondary-foreground: #2e3440;
+    --muted: #dbe2ec;
+    --muted-foreground: #6d7887;
+    --accent: #dbe2ec;
+    --accent-foreground: #2e3440;
+    --destructive: #bf616a;
+    --border: #d3dae3;
+    --input: #c9d2dd;
+    --ring: #5e81ac;
+    --chart-1: #5e81ac;
+    --chart-2: #a3be8c;
+    --chart-3: #ebcb8b;
+    --chart-4: #bf616a;
+    --chart-5: #b48ead;
+    --sidebar: #e5e9f0;
+    --sidebar-foreground: #2e3440;
+    --sidebar-primary: #5e81ac;
+    --sidebar-primary-foreground: #eceff4;
+    --sidebar-accent: #dbe2ec;
+    --sidebar-accent-foreground: #2e3440;
+    --sidebar-border: #d3dae3;
+    --sidebar-ring: #5e81ac;
+}
+
+/* Material Lighter — Material Theme's lightest (light family). */
+[data-theme="material-lighter"] {
+    --background: #fafafa;
+    --foreground: #34454f;
+    --card: #eef3f6;
+    --card-foreground: #34454f;
+    --popover: #ffffff;
+    --popover-foreground: #34454f;
+    --primary: #00897b;
+    --primary-foreground: #ffffff;
+    --secondary: #e2e9ee;
+    --secondary-foreground: #34454f;
+    --muted: #e2e9ee;
+    --muted-foreground: #788c96;
+    --accent: #e2e9ee;
+    --accent-foreground: #34454f;
+    --destructive: #e53935;
+    --border: #d6e0e6;
+    --input: #ccd8df;
+    --ring: #00897b;
+    --chart-1: #00897b;
+    --chart-2: #39adb5;
+    --chart-3: #91b859;
+    --chart-4: #f76d47;
+    --chart-5: #7c4dff;
+    --sidebar: #eef3f6;
+    --sidebar-foreground: #34454f;
+    --sidebar-primary: #00897b;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e2e9ee;
+    --sidebar-accent-foreground: #34454f;
+    --sidebar-border: #d6e0e6;
+    --sidebar-ring: #00897b;
+}
+
+/* Ayu Light — Ayu's daylight side (light family). */
+[data-theme="ayu-light"] {
+    --background: #fafafa;
+    --foreground: #5c6166;
+    --card: #f2f2f2;
+    --card-foreground: #5c6166;
+    --popover: #ffffff;
+    --popover-foreground: #5c6166;
+    --primary: #ff9940;
+    --primary-foreground: #fafafa;
+    --secondary: #e8eaed;
+    --secondary-foreground: #5c6166;
+    --muted: #e8eaed;
+    --muted-foreground: #8a9199;
+    --accent: #e8eaed;
+    --accent-foreground: #5c6166;
+    --destructive: #f07771;
+    --border: #dde0e3;
+    --input: #d2d6da;
+    --ring: #ff9940;
+    --chart-1: #ff9940;
+    --chart-2: #95e6cb;
+    --chart-3: #f2ae49;
+    --chart-4: #f07771;
+    --chart-5: #d2a6ff;
+    --sidebar: #f2f2f2;
+    --sidebar-foreground: #5c6166;
+    --sidebar-primary: #ff9940;
+    --sidebar-primary-foreground: #fafafa;
+    --sidebar-accent: #e8eaed;
+    --sidebar-accent-foreground: #5c6166;
+    --sidebar-border: #dde0e3;
+    --sidebar-ring: #ff9940;
+}
+
+/* Everforest Light — Everforest's daylight (light family). */
+[data-theme="everforest-light"] {
+    --background: #fdf6e3;
+    --foreground: #5c6a60;
+    --card: #f3ead3;
+    --card-foreground: #5c6a60;
+    --popover: #fdf6e3;
+    --popover-foreground: #5c6a60;
+    --primary: #8da101;
+    --primary-foreground: #fdf6e3;
+    --secondary: #efe5cd;
+    --secondary-foreground: #5c6a60;
+    --muted: #efe5cd;
+    --muted-foreground: #93998c;
+    --accent: #efe5cd;
+    --accent-foreground: #5c6a60;
+    --destructive: #e67e80;
+    --border: #e2d9bf;
+    --input: #d8ceb2;
+    --ring: #8da101;
+    --chart-1: #8da101;
+    --chart-2: #83c092;
+    --chart-3: #dbbc7f;
+    --chart-4: #e67e80;
+    --chart-5: #d699b6;
+    --sidebar: #f3ead3;
+    --sidebar-foreground: #5c6a60;
+    --sidebar-primary: #8da101;
+    --sidebar-primary-foreground: #fdf6e3;
+    --sidebar-accent: #efe5cd;
+    --sidebar-accent-foreground: #5c6a60;
+    --sidebar-border: #e2d9bf;
+    --sidebar-ring: #8da101;
+}
+
+/* VS Code Dark+ — Visual Studio's default dark (dark family). */
+[data-theme="vscode-dark-plus"] {
+    --background: #1e1e1e;
+    --foreground: #d4d4d4;
+    --card: #252526;
+    --card-foreground: #d4d4d4;
+    --popover: #252526;
+    --popover-foreground: #cccccc;
+    --primary: #007acc;
+    --primary-foreground: #ffffff;
+    --secondary: #2d2d2d;
+    --secondary-foreground: #cccccc;
+    --muted: #2d2d2d;
+    --muted-foreground: #858585;
+    --accent: #37373d;
+    --accent-foreground: #cccccc;
+    --destructive: #f14c4c;
+    --border: #3c3c3c;
+    --input: #3c3c3c;
+    --ring: #007acc;
+    --chart-1: #007acc;
+    --chart-2: #89d185;
+    --chart-3: #dcdcaa;
+    --chart-4: #f14c4c;
+    --chart-5: #c586c0;
+    --sidebar: #252526;
+    --sidebar-foreground: #cccccc;
+    --sidebar-primary: #007acc;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #37373d;
+    --sidebar-accent-foreground: #cccccc;
+    --sidebar-border: #3c3c3c;
+    --sidebar-ring: #007acc;
+}
+
+/* Catppuccin Frappé — the middle roast (dark family). */
+[data-theme="catppuccin-frappe"] {
+    --background: #303446;
+    --foreground: #c6d0f5;
+    --card: #292c3c;
+    --card-foreground: #c6d0f5;
+    --popover: #292c3c;
+    --popover-foreground: #c6d0f5;
+    --primary: #ca9ee6;
+    --primary-foreground: #232634;
+    --secondary: #363a4f;
+    --secondary-foreground: #c6d0f5;
+    --muted: #363a4f;
+    --muted-foreground: #949cbb;
+    --accent: #363a4f;
+    --accent-foreground: #c6d0f5;
+    --destructive: #e78284;
+    --border: #414559;
+    --input: #414559;
+    --ring: #ca9ee6;
+    --chart-1: #8caaee;
+    --chart-2: #a6d189;
+    --chart-3: #e5c890;
+    --chart-4: #e78284;
+    --chart-5: #ca9ee6;
+    --sidebar: #292c3c;
+    --sidebar-foreground: #c6d0f5;
+    --sidebar-primary: #ca9ee6;
+    --sidebar-primary-foreground: #232634;
+    --sidebar-accent: #363a4f;
+    --sidebar-accent-foreground: #c6d0f5;
+    --sidebar-border: #414559;
+    --sidebar-ring: #ca9ee6;
+}
+
+/* Moonlight — violet night sky (dark family). */
+[data-theme="moonlight"] {
+    --background: #1f2133;
+    --foreground: #c8cbe8;
+    --card: #262a3f;
+    --card-foreground: #c8cbe8;
+    --popover: #262a3f;
+    --popover-foreground: #c8cbe8;
+    --primary: #a5b0f5;
+    --primary-foreground: #1f2133;
+    --secondary: #2c3048;
+    --secondary-foreground: #c8cbe8;
+    --muted: #2c3048;
+    --muted-foreground: #7d81a8;
+    --accent: #2c3048;
+    --accent-foreground: #c8cbe8;
+    --destructive: #ff757f;
+    --border: #343a56;
+    --input: #343a56;
+    --ring: #a5b0f5;
+    --chart-1: #a5b0f5;
+    --chart-2: #7fd6c2;
+    --chart-3: #ffe09e;
+    --chart-4: #ff757f;
+    --chart-5: #baa6ff;
+    --sidebar: #262a3f;
+    --sidebar-foreground: #c8cbe8;
+    --sidebar-primary: #a5b0f5;
+    --sidebar-primary-foreground: #1f2133;
+    --sidebar-accent: #2c3048;
+    --sidebar-accent-foreground: #c8cbe8;
+    --sidebar-border: #343a56;
+    --sidebar-ring: #a5b0f5;
+}
+
+/* Shades of Purple — royal purples, vivid cyan (dark family). */
+[data-theme="shades-of-purple"] {
+    --background: #2b213c;
+    --foreground: #f1f2f8;
+    --card: #38305c;
+    --card-foreground: #f1f2f8;
+    --popover: #38305c;
+    --popover-foreground: #f1f2f8;
+    --primary: #a5b4fc;
+    --primary-foreground: #2b213c;
+    --secondary: #3f3870;
+    --secondary-foreground: #f1f2f8;
+    --muted: #3f3870;
+    --muted-foreground: #a7a4c9;
+    --accent: #3f3870;
+    --accent-foreground: #f1f2f8;
+    --destructive: #ff6f61;
+    --border: #463f79;
+    --input: #463f79;
+    --ring: #a5b4fc;
+    --chart-1: #7dd3fc;
+    --chart-2: #a3e635;
+    --chart-3: #fbbf24;
+    --chart-4: #ff6f61;
+    --chart-5: #c084fc;
+    --sidebar: #38305c;
+    --sidebar-foreground: #f1f2f8;
+    --sidebar-primary: #a5b4fc;
+    --sidebar-primary-foreground: #2b213c;
+    --sidebar-accent: #3f3870;
+    --sidebar-accent-foreground: #f1f2f8;
+    --sidebar-border: #463f79;
+    --sidebar-ring: #a5b4fc;
+}
+
+/* Vesper — minimal matte black-grey (dark family). */
+[data-theme="vesper"] {
+    --background: #101010;
+    --foreground: #d0d0d0;
+    --card: #161616;
+    --card-foreground: #d0d0d0;
+    --popover: #161616;
+    --popover-foreground: #d0d0d0;
+    --primary: #ffc999;
+    --primary-foreground: #101010;
+    --secondary: #1c1c1c;
+    --secondary-foreground: #d0d0d0;
+    --muted: #1c1c1c;
+    --muted-foreground: #808080;
+    --accent: #1c1c1c;
+    --accent-foreground: #d0d0d0;
+    --destructive: #ffb3a7;
+    --border: #232323;
+    --input: #232323;
+    --ring: #ffc999;
+    --chart-1: #ffc999;
+    --chart-2: #b1e2c3;
+    --chart-3: #f0e4bc;
+    --chart-4: #ffb3a7;
+    --chart-5: #c5c9f0;
+    --sidebar: #161616;
+    --sidebar-foreground: #d0d0d0;
+    --sidebar-primary: #ffc999;
+    --sidebar-primary-foreground: #101010;
+    --sidebar-accent: #1c1c1c;
+    --sidebar-accent-foreground: #d0d0d0;
+    --sidebar-border: #232323;
+    --sidebar-ring: #ffc999;
+}
+
+/* ─── extended theme set (see lib/ui-themes.ts) ──────────────── */
+
+/* Alabaster — the minimal light classic (light family). */
+[data-theme="alabaster"] {
+    --background: #f7f7f7;
+    --foreground: #333333;
+    --card: #ededed;
+    --card-foreground: #333333;
+    --popover: #ffffff;
+    --popover-foreground: #333333;
+    --primary: #55b8b9;
+    --primary-foreground: #ffffff;
+    --secondary: #e4e4e4;
+    --secondary-foreground: #333333;
+    --muted: #e4e4e4;
+    --muted-foreground: #999999;
+    --accent: #e4e4e4;
+    --accent-foreground: #333333;
+    --destructive: #c94a4a;
+    --border: #dedede;
+    --input: #dedede;
+    --ring: #55b8b9;
+    --chart-1: #55b8b9;
+    --chart-2: #9aa31b;
+    --chart-3: #c9a227;
+    --chart-4: #c94a4a;
+    --chart-5: #7a7ae8;
+    --sidebar: #ededed;
+    --sidebar-foreground: #333333;
+    --sidebar-primary: #55b8b9;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e4e4e4;
+    --sidebar-accent-foreground: #333333;
+    --sidebar-border: #dedede;
+    --sidebar-ring: #55b8b9;
+}
+
+/* Tomorrow — Base16 Tomorrow Light (light family). */
+[data-theme="tomorrow-light"] {
+    --background: #ffffff;
+    --foreground: #4d4d4c;
+    --card: #efefef;
+    --card-foreground: #4d4d4c;
+    --popover: #efefef;
+    --popover-foreground: #3d3d3c;
+    --primary: #4271ae;
+    --primary-foreground: #ffffff;
+    --secondary: #e0e0e0;
+    --secondary-foreground: #4d4d4c;
+    --muted: #e0e0e0;
+    --muted-foreground: #969694;
+    --accent: #e0e0e0;
+    --accent-foreground: #4d4d4c;
+    --destructive: #c82829;
+    --border: #d6d6d6;
+    --input: #d6d6d6;
+    --ring: #4271ae;
+    --chart-1: #4271ae;
+    --chart-2: #718c00;
+    --chart-3: #eab700;
+    --chart-4: #c82829;
+    --chart-5: #8959a8;
+    --sidebar: #efefef;
+    --sidebar-foreground: #4d4d4c;
+    --sidebar-primary: #4271ae;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e0e0e0;
+    --sidebar-accent-foreground: #4d4d4c;
+    --sidebar-border: #d6d6d6;
+    --sidebar-ring: #4271ae;
+}
+
+/* Horizon Light — warm peach daylight (light family). */
+[data-theme="horizon-light"] {
+    --background: #fdf5f0;
+    --foreground: #1c1e29;
+    --card: #f5e3dd;
+    --card-foreground: #1c1e29;
+    --popover: #f5e3dd;
+    --popover-foreground: #1c1e29;
+    --primary: #e9597d;
+    --primary-foreground: #ffffff;
+    --secondary: #f0dcd4;
+    --secondary-foreground: #232530;
+    --muted: #f0dcd4;
+    --muted-foreground: #a89890;
+    --accent: #f0dcd4;
+    --accent-foreground: #232530;
+    --destructive: #da6f2e;
+    --border: #ebd5c9;
+    --input: #ebd5c9;
+    --ring: #e9597d;
+    --chart-1: #e9597d;
+    --chart-2: #29d398;
+    --chart-3: #efb453;
+    --chart-4: #da6f2e;
+    --chart-5: #b877e9;
+    --sidebar: #f5e3dd;
+    --sidebar-foreground: #1c1e29;
+    --sidebar-primary: #e9597d;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f0dcd4;
+    --sidebar-accent-foreground: #232530;
+    --sidebar-border: #ebd5c9;
+    --sidebar-ring: #e9597d;
+}
+
+/* Rosé Pine Dawn — sunrise cream (light family). */
+[data-theme="rose-pine-dawn"] {
+    --background: #faf4ed;
+    --foreground: #576269;
+    --card: #f2e9e1;
+    --card-foreground: #576269;
+    --popover: #f2e9e1;
+    --popover-foreground: #576269;
+    --primary: #d7827e;
+    --primary-foreground: #faf4ed;
+    --secondary: #eee0d6;
+    --secondary-foreground: #576269;
+    --muted: #eee0d6;
+    --muted-foreground: #a79d92;
+    --accent: #eee0d6;
+    --accent-foreground: #576269;
+    --destructive: #b4637a;
+    --border: #e7d9cd;
+    --input: #e7d9cd;
+    --ring: #d7827e;
+    --chart-1: #d7827e;
+    --chart-2: #56a169;
+    --chart-3: #907aa9;
+    --chart-4: #b4637a;
+    --chart-5: #286983;
+    --sidebar: #f2e9e1;
+    --sidebar-foreground: #576269;
+    --sidebar-primary: #d7827e;
+    --sidebar-primary-foreground: #faf4ed;
+    --sidebar-accent: #eee0d6;
+    --sidebar-accent-foreground: #576269;
+    --sidebar-border: #e7d9cd;
+    --sidebar-ring: #d7827e;
+}
+
+/* Winter Is Coming (Light) — crisp pale frost (light family). */
+[data-theme="winter-is-coming-light"] {
+    --background: #f2f2f2;
+    --foreground: #1f1f1f;
+    --card: #e6e6e6;
+    --card-foreground: #1f1f1f;
+    --popover: #e6e6e6;
+    --popover-foreground: #1f1f1f;
+    --primary: #11a2e5;
+    --primary-foreground: #ffffff;
+    --secondary: #dcdcdc;
+    --secondary-foreground: #1f1f1f;
+    --muted: #dcdcdc;
+    --muted-foreground: #909296;
+    --accent: #dcdcdc;
+    --accent-foreground: #1f1f1f;
+    --destructive: #e05252;
+    --border: #d3d3d3;
+    --input: #d3d3d3;
+    --ring: #11a2e5;
+    --chart-1: #11a2e5;
+    --chart-2: #2bc98d;
+    --chart-3: #e0a52e;
+    --chart-4: #e05252;
+    --chart-5: #9a7fe8;
+    --sidebar: #e6e6e6;
+    --sidebar-foreground: #1f1f1f;
+    --sidebar-primary: #11a2e5;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #dcdcdc;
+    --sidebar-accent-foreground: #1f1f1f;
+    --sidebar-border: #d3d3d3;
+    --sidebar-ring: #11a2e5;
+}
+
+/* Blueprint — engineering drafting paper (light family). */
+[data-theme="blueprint"] {
+    --background: #eef3f8;
+    --foreground: #1a2b3c;
+    --card: #dce6f2;
+    --card-foreground: #1a2b3c;
+    --popover: #dce6f2;
+    --popover-foreground: #1a2b3c;
+    --primary: #1e5aa8;
+    --primary-foreground: #ffffff;
+    --secondary: #d2dfee;
+    --secondary-foreground: #1a2b3c;
+    --muted: #d2dfee;
+    --muted-foreground: #6b7f97;
+    --accent: #d2dfee;
+    --accent-foreground: #1a2b3c;
+    --destructive: #b3413b;
+    --border: #c4d4e8;
+    --input: #c4d4e8;
+    --ring: #1e5aa8;
+    --chart-1: #1e5aa8;
+    --chart-2: #2d8a6f;
+    --chart-3: #c9922e;
+    --chart-4: #b3413b;
+    --chart-5: #7c5fd0;
+    --sidebar: #dce6f2;
+    --sidebar-foreground: #1a2b3c;
+    --sidebar-primary: #1e5aa8;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #d2dfee;
+    --sidebar-accent-foreground: #1a2b3c;
+    --sidebar-border: #c4d4e8;
+    --sidebar-ring: #1e5aa8;
+}
+
+/* Night Owl — deep navy night (dark family). */
+[data-theme="night-owl"] {
+    --background: #011627;
+    --foreground: #d6deeb;
+    --card: #0b2942;
+    --card-foreground: #d6deeb;
+    --popover: #0b2942;
+    --popover-foreground: #d6deeb;
+    --primary: #82aaff;
+    --primary-foreground: #011627;
+    --secondary: #123456;
+    --secondary-foreground: #d6deeb;
+    --muted: #123456;
+    --muted-foreground: #5f7e97;
+    --accent: #123456;
+    --accent-foreground: #d6deeb;
+    --destructive: #ef5350;
+    --border: #122d42;
+    --input: #122d42;
+    --ring: #82aaff;
+    --chart-1: #82aaff;
+    --chart-2: #21c7a8;
+    --chart-3: #ffcb8b;
+    --chart-4: #ef5350;
+    --chart-5: #c792ea;
+    --sidebar: #0b2942;
+    --sidebar-foreground: #d6deeb;
+    --sidebar-primary: #82aaff;
+    --sidebar-primary-foreground: #011627;
+    --sidebar-accent: #123456;
+    --sidebar-accent-foreground: #d6deeb;
+    --sidebar-border: #122d42;
+    --sidebar-ring: #82aaff;
+}
+
+/* Material Ocean — deepest blue with cyan (dark family). */
+[data-theme="material-ocean"] {
+    --background: #0f111a;
+    --foreground: #a6accd;
+    --card: #1f2233;
+    --card-foreground: #a6accd;
+    --popover: #1f2233;
+    --popover-foreground: #a6accd;
+    --primary: #84ffff;
+    --primary-foreground: #0f111a;
+    --secondary: #2a2d42;
+    --secondary-foreground: #a6accd;
+    --muted: #2a2d42;
+    --muted-foreground: #717599;
+    --accent: #2a2d42;
+    --accent-foreground: #a6accd;
+    --destructive: #ff5370;
+    --border: #343850;
+    --input: #343850;
+    --ring: #84ffff;
+    --chart-1: #84ffff;
+    --chart-2: #89ddff;
+    --chart-3: #ffcb6b;
+    --chart-4: #ff5370;
+    --chart-5: #c792ea;
+    --sidebar: #1f2233;
+    --sidebar-foreground: #a6accd;
+    --sidebar-primary: #84ffff;
+    --sidebar-primary-foreground: #0f111a;
+    --sidebar-accent: #2a2d42;
+    --sidebar-accent-foreground: #a6accd;
+    --sidebar-border: #343850;
+    --sidebar-ring: #84ffff;
+}
+
+/* Arc Dark — the Arc desktop shell (dark family). */
+[data-theme="arc-dark"] {
+    --background: #2f343f;
+    --foreground: #d3dae3;
+    --card: #383c4a;
+    --card-foreground: #d3dae3;
+    --popover: #383c4a;
+    --popover-foreground: #d3dae3;
+    --primary: #5294e2;
+    --primary-foreground: #ffffff;
+    --secondary: #414656;
+    --secondary-foreground: #d3dae3;
+    --muted: #414656;
+    --muted-foreground: #8b8fa3;
+    --accent: #414656;
+    --accent-foreground: #d3dae3;
+    --destructive: #e95420;
+    --border: #4a4f5e;
+    --input: #4a4f5e;
+    --ring: #5294e2;
+    --chart-1: #5294e2;
+    --chart-2: #6ec98d;
+    --chart-3: #f6c36a;
+    --chart-4: #e95420;
+    --chart-5: #b389f5;
+    --sidebar: #383c4a;
+    --sidebar-foreground: #d3dae3;
+    --sidebar-primary: #5294e2;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #414656;
+    --sidebar-accent-foreground: #d3dae3;
+    --sidebar-border: #4a4f5e;
+    --sidebar-ring: #5294e2;
+}
+
+/* Rosé Pine Moon — moonlit variant (dark family). */
+[data-theme="rose-pine-moon"] {
+    --background: #232136;
+    --foreground: #e0def4;
+    --card: #2a2837;
+    --card-foreground: #e0def4;
+    --popover: #2a2837;
+    --popover-foreground: #e0def4;
+    --primary: #ebbcba;
+    --primary-foreground: #232136;
+    --secondary: #393552;
+    --secondary-foreground: #e0def4;
+    --muted: #393552;
+    --muted-foreground: #908caa;
+    --accent: #393552;
+    --accent-foreground: #e0def4;
+    --destructive: #eb6f92;
+    --border: #44415a;
+    --input: #44415a;
+    --ring: #ebbcba;
+    --chart-1: #ebbcba;
+    --chart-2: #9cccab;
+    --chart-3: #f6c177;
+    --chart-4: #eb6f92;
+    --chart-5: #c4a7e7;
+    --sidebar: #2a2837;
+    --sidebar-foreground: #e0def4;
+    --sidebar-primary: #ebbcba;
+    --sidebar-primary-foreground: #232136;
+    --sidebar-accent: #393552;
+    --sidebar-accent-foreground: #e0def4;
+    --sidebar-border: #44415a;
+    --sidebar-ring: #ebbcba;
+}
+
+/* Panda Syntax — warm charcoal with hot pink (dark family). */
+[data-theme="panda-syntax"] {
+    --background: #222223;
+    --foreground: #e6e6e6;
+    --card: #2a2a2b;
+    --card-foreground: #e6e6e6;
+    --popover: #2a2a2b;
+    --popover-foreground: #e6e6e6;
+    --primary: #ff75b5;
+    --primary-foreground: #222223;
+    --secondary: #343435;
+    --secondary-foreground: #e6e6e6;
+    --muted: #343435;
+    --muted-foreground: #868686;
+    --accent: #343435;
+    --accent-foreground: #e6e6e6;
+    --destructive: #ff2c6d;
+    --border: #3e3e40;
+    --input: #3e3e40;
+    --ring: #ff75b5;
+    --chart-1: #ff75b5;
+    --chart-2: #19f9d8;
+    --chart-3: #ffb86c;
+    --chart-4: #ff2c6d;
+    --chart-5: #b6b6ff;
+    --sidebar: #2a2a2b;
+    --sidebar-foreground: #e6e6e6;
+    --sidebar-primary: #ff75b5;
+    --sidebar-primary-foreground: #222223;
+    --sidebar-accent: #343435;
+    --sidebar-accent-foreground: #e6e6e6;
+    --sidebar-border: #3e3e40;
+    --sidebar-ring: #ff75b5;
+}
+
+/* Terminal Green — retro CRT phosphor (dark family). */
+[data-theme="terminal-green"] {
+    --background: #07100b;
+    --foreground: #c8f7d4;
+    --card: #0b1a10;
+    --card-foreground: #c8f7d4;
+    --popover: #0b1a10;
+    --popover-foreground: #c8f7d4;
+    --primary: #2bd94e;
+    --primary-foreground: #07100b;
+    --secondary: #123f1e;
+    --secondary-foreground: #c8f7d4;
+    --muted: #123f1e;
+    --muted-foreground: #55b96b;
+    --accent: #123f1e;
+    --accent-foreground: #c8f7d4;
+    --destructive: #ff5d5d;
+    --border: #174a24;
+    --input: #174a24;
+    --ring: #2bd94e;
+    --chart-1: #2bd94e;
+    --chart-2: #8be9a0;
+    --chart-3: #d8f26d;
+    --chart-4: #ff5d5d;
+    --chart-5: #6fe0c8;
+    --sidebar: #0b1a10;
+    --sidebar-foreground: #c8f7d4;
+    --sidebar-primary: #2bd94e;
+    --sidebar-primary-foreground: #07100b;
+    --sidebar-accent: #123f1e;
+    --sidebar-accent-foreground: #c8f7d4;
+    --sidebar-border: #174a24;
+    --sidebar-ring: #2bd94e;
+}

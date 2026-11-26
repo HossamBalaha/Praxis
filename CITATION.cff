@@ -1,0 +1,48 @@
+# CITATION.cff — Praxis
+# https://citation-file-format.github.io/
+
+cff-version: 1.2.0
+message: "If you use Praxis in your research or teaching, please cite it as below."
+title: "Praxis — Browser and desktop polyglot IDE for Python and 29+ languages"
+version: "0.1.0"
+abstract: >-
+  Praxis is a localhost-first browser and desktop polyglot IDE built with Next.js
+  and Bun that turns a folder of scripts into an interactive workbench for Python
+  and 29+ additional languages. Users can browse auto-discovered project trees,
+  edit with syntax highlighting and Pyright LSP diagnostics, and execute code in
+  place with streaming output, captured matplotlib figures, DataFrame previews,
+  variable inspection, code coverage, profiling panels, and standalone desktop
+  distributions for Windows, Linux, and macOS.
+authors:
+  - family-names: Balaha
+    given-names: Hossam Magdy
+    email: h3ossam@gmail.com
+    orcid: "https://orcid.org/0000-0002-0686-4411"
+    affiliation: "University of Louisville, Bioengineering Department"
+keywords:
+  - python
+  - ide
+  - polyglot
+  - nextjs
+  - typescript
+  - electron
+  - desktop-app
+  - education
+  - scientific-computing
+  - data-science
+  - matplotlib
+  - pandas
+  - interactive
+license: CC-BY-NC-4.0
+type: software
+date-released: "2026-11-26"
+url: "https://github.com/HossamBalaha/Praxis"
+repository-code: "https://github.com/HossamBalaha/Praxis"
+preferred-citation:
+  type: software
+  title: "Praxis — Browser and desktop polyglot IDE for Python and 29+ languages"
+  authors:
+    - family-names: Balaha
+      given-names: Hossam Magdy
+  year: 2026
+  url: "https://github.com/HossamBalaha/Praxis"

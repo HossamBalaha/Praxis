@@ -1,0 +1,27 @@
+# Project specification — TOML viewer test set.
+title = "Praxis Example Suite"
+version = "1.0.0"
+isTestSuite = true
+keywords = ["examples", "test", "praxis"]
+
+[build]
+targetDirectory = "dist"
+watchMode = false
+
+[build.flags]
+optimizeLevel = 2
+verbose = true
+
+[[sensors]]
+sensorId = 1
+kindValue = "temperature"
+rangeCelsius = [-10, 45]
+
+[[sensors]]
+sensorId = 2
+kindValue = "humidity"
+rangePercent = [0, 100]
+
+[rendering]
+inlineTable = { coloredNumbers = true, zebraRows = true }
+offsetDate = 1979-05-27T07:32:00Z

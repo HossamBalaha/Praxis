@@ -1,0 +1,40 @@
+# GraphQL demo — a book-shop schema (queries + mutations).
+# Formatting: braces drive the layout; # comments stay verbatim.
+type Author {
+  id: ID!
+  name: String!
+  books(offset: Int = 0, limit: Int = 10): [Book!]!
+}
+
+type Book {
+  id: ID!
+  title: String!
+  year: Int
+  authors: [Author!]!
+  rating: Float
+}
+
+enum SortField {
+  TITLE
+  YEAR
+  RATING
+}
+
+type Query {
+  book(id: ID!): Book
+  books(sort: SortField = TITLE, limit: Int = 20): [Book!]!
+  search(term: String!): [SearchResult!]!
+}
+
+union SearchResult = Book | Author
+
+input BookInput {
+  title: String!
+  year: Int
+  authorIds: [ID!] = []
+}
+
+type Mutation {
+  addBook(input: BookInput!): Book!
+  removeBook(id: ID!): Boolean
+}

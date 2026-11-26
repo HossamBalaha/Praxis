@@ -1,0 +1,25 @@
+---
+title: "Sensor Report"
+author: "Praxis Example Suite"
+date: "2026-01-01"
+output: html_document
+---
+
+# Sensor Report
+
+An RMarkdown file for the Rmd viewer.
+
+## Summary
+
+The dataset contains readings from four sites.
+
+```{r load}
+readingsFrame <- read.csv("../Data Files/SensorReadings.csv")
+summary(readingsFrame)
+```
+
+## Chart
+
+```{r chart, fig.width=7, fig.height=4}
+plot(readingsFrame$temperatureC, pch = 19, xlab = "Row", ylab = "Celsius")
+```

@@ -1,0 +1,68 @@
+# ─── Build output ──────────────────────────────────────────────
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# ─── Dependencies ─────────────────────────────────────────────
+node_modules/
+
+# ─── Logs & runtime artifacts ──────────────────────────────────
+dev.log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ─── IDE / editors (PyCharm / IntelliJ / VS Code) ─────────────
+.idea/
+.idea/*
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# ─── OS junk ──────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ─── Python runtime artifacts ──────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+.eggs/
+
+# ─── Praxis per-machine runtime state (never share these) ─────
+.praxis/
+python_scripts/.praxis/
+
+# ─── Environment & secrets ────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Test & coverage artifacts ─────────────────────────────────
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

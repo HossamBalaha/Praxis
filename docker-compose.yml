@@ -1,0 +1,22 @@
+services:
+  praxis:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      # AUDIT FIX (H4): the standalone server chdir()s into
+      # .next/standalone, so the app must NOT resolve python_scripts
+      # against the working directory — that read a build-time traced
+      # snapshot while this live mount sat one level above it, unused.
+      # SCRIPTS_ROOT pins the root to the mounted directory explicitly.
+      - ./python_scripts:/app/python_scripts
+      - praxis-cache:/tmp/statcomp-runs
+    environment:
+      - NEXT_PUBLIC_APP_NAME=Praxis
+      - NEXT_PUBLIC_APP_TAGLINE=Theory into practice
+      - NEXT_PUBLIC_SCRIPTS_DIR=python_scripts
+      - SCRIPTS_ROOT=/app/python_scripts
+    restart: unless-stopped
+
+volumes:
+  praxis-cache:

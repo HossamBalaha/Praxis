@@ -1,0 +1,2907 @@
+{
+  "catalog": {
+    "version": 39,
+    "generated": "2026-11-13",
+    "departments": [
+      {
+        "name": "dept-01",
+        "items": [
+          {
+            "id": "SKU-00021",
+            "name": "Component 21",
+            "category": "actuator",
+            "price": 31.77,
+            "stock": {
+              "warehouse": 21,
+              "reserved": 4
+            },
+            "specs": {
+              "mass": 1.15,
+              "dimensions": {
+                "l": 31,
+                "w": 26,
+                "h": 23
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t27",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00022",
+            "name": "Component 22",
+            "category": "controller",
+            "price": 33.14,
+            "stock": {
+              "warehouse": 22,
+              "reserved": 5
+            },
+            "specs": {
+              "mass": 1.2,
+              "dimensions": {
+                "l": 32,
+                "w": 27,
+                "h": 24
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t34",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00023",
+            "name": "Component 23",
+            "category": "fixture",
+            "price": 34.51,
+            "stock": {
+              "warehouse": 23,
+              "reserved": 6
+            },
+            "specs": {
+              "mass": 1.25,
+              "dimensions": {
+                "l": 33,
+                "w": 28,
+                "h": 25
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t41",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00024",
+            "name": "Component 24",
+            "category": "sensor",
+            "price": 35.88,
+            "stock": {
+              "warehouse": 24,
+              "reserved": 7
+            },
+            "specs": {
+              "mass": 1.3,
+              "dimensions": {
+                "l": 34,
+                "w": 29,
+                "h": 26
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t48",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00025",
+            "name": "Component 25",
+            "category": "actuator",
+            "price": 37.25,
+            "stock": {
+              "warehouse": 25,
+              "reserved": 8
+            },
+            "specs": {
+              "mass": 1.35,
+              "dimensions": {
+                "l": 35,
+                "w": 30,
+                "h": 2
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t55",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00026",
+            "name": "Component 26",
+            "category": "controller",
+            "price": 38.62,
+            "stock": {
+              "warehouse": 26,
+              "reserved": 9
+            },
+            "specs": {
+              "mass": 1.4,
+              "dimensions": {
+                "l": 36,
+                "w": 31,
+                "h": 3
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t02",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00027",
+            "name": "Component 27",
+            "category": "fixture",
+            "price": 39.99,
+            "stock": {
+              "warehouse": 27,
+              "reserved": 10
+            },
+            "specs": {
+              "mass": 1.45,
+              "dimensions": {
+                "l": 37,
+                "w": 32,
+                "h": 4
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t09",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00028",
+            "name": "Component 28",
+            "category": "sensor",
+            "price": 41.36,
+            "stock": {
+              "warehouse": 28,
+              "reserved": 11
+            },
+            "specs": {
+              "mass": 1.5,
+              "dimensions": {
+                "l": 38,
+                "w": 33,
+                "h": 5
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t16",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00029",
+            "name": "Component 29",
+            "category": "actuator",
+            "price": 42.73,
+            "stock": {
+              "warehouse": 29,
+              "reserved": 12
+            },
+            "specs": {
+              "mass": 1.55,
+              "dimensions": {
+                "l": 39,
+                "w": 34,
+                "h": 6
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t23",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00030",
+            "name": "Component 30",
+            "category": "controller",
+            "price": 44.1,
+            "stock": {
+              "warehouse": 30,
+              "reserved": 13
+            },
+            "specs": {
+              "mass": 1.6,
+              "dimensions": {
+                "l": 40,
+                "w": 35,
+                "h": 7
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t30",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00031",
+            "name": "Component 31",
+            "category": "fixture",
+            "price": 45.47,
+            "stock": {
+              "warehouse": 31,
+              "reserved": 14
+            },
+            "specs": {
+              "mass": 1.65,
+              "dimensions": {
+                "l": 41,
+                "w": 36,
+                "h": 8
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t37",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00032",
+            "name": "Component 32",
+            "category": "sensor",
+            "price": 46.84,
+            "stock": {
+              "warehouse": 32,
+              "reserved": 15
+            },
+            "specs": {
+              "mass": 1.7,
+              "dimensions": {
+                "l": 42,
+                "w": 37,
+                "h": 9
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t44",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00033",
+            "name": "Component 33",
+            "category": "actuator",
+            "price": 48.21,
+            "stock": {
+              "warehouse": 33,
+              "reserved": 16
+            },
+            "specs": {
+              "mass": 1.75,
+              "dimensions": {
+                "l": 43,
+                "w": 38,
+                "h": 10
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t51",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00034",
+            "name": "Component 34",
+            "category": "controller",
+            "price": 49.58,
+            "stock": {
+              "warehouse": 34,
+              "reserved": 0
+            },
+            "specs": {
+              "mass": 1.8,
+              "dimensions": {
+                "l": 44,
+                "w": 39,
+                "h": 11
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t58",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00035",
+            "name": "Component 35",
+            "category": "fixture",
+            "price": 50.95,
+            "stock": {
+              "warehouse": 35,
+              "reserved": 1
+            },
+            "specs": {
+              "mass": 1.85,
+              "dimensions": {
+                "l": 45,
+                "w": 40,
+                "h": 12
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t05",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00036",
+            "name": "Component 36",
+            "category": "sensor",
+            "price": 52.32,
+            "stock": {
+              "warehouse": 36,
+              "reserved": 2
+            },
+            "specs": {
+              "mass": 1.9,
+              "dimensions": {
+                "l": 46,
+                "w": 41,
+                "h": 13
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t12",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00037",
+            "name": "Component 37",
+            "category": "actuator",
+            "price": 53.69,
+            "stock": {
+              "warehouse": 37,
+              "reserved": 3
+            },
+            "specs": {
+              "mass": 1.95,
+              "dimensions": {
+                "l": 47,
+                "w": 42,
+                "h": 14
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t19",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00038",
+            "name": "Component 38",
+            "category": "controller",
+            "price": 55.06,
+            "stock": {
+              "warehouse": 38,
+              "reserved": 4
+            },
+            "specs": {
+              "mass": 2.0,
+              "dimensions": {
+                "l": 48,
+                "w": 43,
+                "h": 15
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t26",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00039",
+            "name": "Component 39",
+            "category": "fixture",
+            "price": 56.43,
+            "stock": {
+              "warehouse": 39,
+              "reserved": 5
+            },
+            "specs": {
+              "mass": 2.05,
+              "dimensions": {
+                "l": 49,
+                "w": 44,
+                "h": 16
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t33",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00040",
+            "name": "Component 40",
+            "category": "sensor",
+            "price": 57.8,
+            "stock": {
+              "warehouse": 40,
+              "reserved": 6
+            },
+            "specs": {
+              "mass": 0.1,
+              "dimensions": {
+                "l": 50,
+                "w": 5,
+                "h": 17
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t40",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dept-02",
+        "items": [
+          {
+            "id": "SKU-00041",
+            "name": "Component 41",
+            "category": "actuator",
+            "price": 59.17,
+            "stock": {
+              "warehouse": 41,
+              "reserved": 7
+            },
+            "specs": {
+              "mass": 0.15,
+              "dimensions": {
+                "l": 51,
+                "w": 6,
+                "h": 18
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t47",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00042",
+            "name": "Component 42",
+            "category": "controller",
+            "price": 60.54,
+            "stock": {
+              "warehouse": 42,
+              "reserved": 8
+            },
+            "specs": {
+              "mass": 0.2,
+              "dimensions": {
+                "l": 52,
+                "w": 7,
+                "h": 19
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t54",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00043",
+            "name": "Component 43",
+            "category": "fixture",
+            "price": 61.91,
+            "stock": {
+              "warehouse": 43,
+              "reserved": 9
+            },
+            "specs": {
+              "mass": 0.25,
+              "dimensions": {
+                "l": 53,
+                "w": 8,
+                "h": 20
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t01",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00044",
+            "name": "Component 44",
+            "category": "sensor",
+            "price": 63.28,
+            "stock": {
+              "warehouse": 44,
+              "reserved": 10
+            },
+            "specs": {
+              "mass": 0.3,
+              "dimensions": {
+                "l": 54,
+                "w": 9,
+                "h": 21
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t08",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00045",
+            "name": "Component 45",
+            "category": "actuator",
+            "price": 64.65,
+            "stock": {
+              "warehouse": 45,
+              "reserved": 11
+            },
+            "specs": {
+              "mass": 0.35,
+              "dimensions": {
+                "l": 55,
+                "w": 10,
+                "h": 22
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t15",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00046",
+            "name": "Component 46",
+            "category": "controller",
+            "price": 66.02,
+            "stock": {
+              "warehouse": 46,
+              "reserved": 12
+            },
+            "specs": {
+              "mass": 0.4,
+              "dimensions": {
+                "l": 56,
+                "w": 11,
+                "h": 23
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t22",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00047",
+            "name": "Component 47",
+            "category": "fixture",
+            "price": 67.39,
+            "stock": {
+              "warehouse": 47,
+              "reserved": 13
+            },
+            "specs": {
+              "mass": 0.45,
+              "dimensions": {
+                "l": 57,
+                "w": 12,
+                "h": 24
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t29",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00048",
+            "name": "Component 48",
+            "category": "sensor",
+            "price": 68.76,
+            "stock": {
+              "warehouse": 48,
+              "reserved": 14
+            },
+            "specs": {
+              "mass": 0.5,
+              "dimensions": {
+                "l": 58,
+                "w": 13,
+                "h": 25
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t36",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00049",
+            "name": "Component 49",
+            "category": "actuator",
+            "price": 70.13,
+            "stock": {
+              "warehouse": 49,
+              "reserved": 15
+            },
+            "specs": {
+              "mass": 0.55,
+              "dimensions": {
+                "l": 59,
+                "w": 14,
+                "h": 26
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t43",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00050",
+            "name": "Component 50",
+            "category": "controller",
+            "price": 71.5,
+            "stock": {
+              "warehouse": 50,
+              "reserved": 16
+            },
+            "specs": {
+              "mass": 0.6,
+              "dimensions": {
+                "l": 60,
+                "w": 15,
+                "h": 2
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t50",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00051",
+            "name": "Component 51",
+            "category": "fixture",
+            "price": 72.87,
+            "stock": {
+              "warehouse": 51,
+              "reserved": 0
+            },
+            "specs": {
+              "mass": 0.65,
+              "dimensions": {
+                "l": 61,
+                "w": 16,
+                "h": 3
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t57",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00052",
+            "name": "Component 52",
+            "category": "sensor",
+            "price": 74.24,
+            "stock": {
+              "warehouse": 52,
+              "reserved": 1
+            },
+            "specs": {
+              "mass": 0.7,
+              "dimensions": {
+                "l": 62,
+                "w": 17,
+                "h": 4
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t04",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00053",
+            "name": "Component 53",
+            "category": "actuator",
+            "price": 75.61,
+            "stock": {
+              "warehouse": 53,
+              "reserved": 2
+            },
+            "specs": {
+              "mass": 0.75,
+              "dimensions": {
+                "l": 63,
+                "w": 18,
+                "h": 5
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t11",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00054",
+            "name": "Component 54",
+            "category": "controller",
+            "price": 76.98,
+            "stock": {
+              "warehouse": 54,
+              "reserved": 3
+            },
+            "specs": {
+              "mass": 0.8,
+              "dimensions": {
+                "l": 64,
+                "w": 19,
+                "h": 6
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t18",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00055",
+            "name": "Component 55",
+            "category": "fixture",
+            "price": 78.35,
+            "stock": {
+              "warehouse": 55,
+              "reserved": 4
+            },
+            "specs": {
+              "mass": 0.85,
+              "dimensions": {
+                "l": 65,
+                "w": 20,
+                "h": 7
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t25",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00056",
+            "name": "Component 56",
+            "category": "sensor",
+            "price": 79.72,
+            "stock": {
+              "warehouse": 56,
+              "reserved": 5
+            },
+            "specs": {
+              "mass": 0.9,
+              "dimensions": {
+                "l": 66,
+                "w": 21,
+                "h": 8
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t32",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00057",
+            "name": "Component 57",
+            "category": "actuator",
+            "price": 81.09,
+            "stock": {
+              "warehouse": 57,
+              "reserved": 6
+            },
+            "specs": {
+              "mass": 0.95,
+              "dimensions": {
+                "l": 67,
+                "w": 22,
+                "h": 9
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t39",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00058",
+            "name": "Component 58",
+            "category": "controller",
+            "price": 82.46,
+            "stock": {
+              "warehouse": 58,
+              "reserved": 7
+            },
+            "specs": {
+              "mass": 1.0,
+              "dimensions": {
+                "l": 68,
+                "w": 23,
+                "h": 10
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t46",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00059",
+            "name": "Component 59",
+            "category": "fixture",
+            "price": 83.83,
+            "stock": {
+              "warehouse": 59,
+              "reserved": 8
+            },
+            "specs": {
+              "mass": 1.05,
+              "dimensions": {
+                "l": 69,
+                "w": 24,
+                "h": 11
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t53",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00060",
+            "name": "Component 60",
+            "category": "sensor",
+            "price": 85.2,
+            "stock": {
+              "warehouse": 60,
+              "reserved": 9
+            },
+            "specs": {
+              "mass": 1.1,
+              "dimensions": {
+                "l": 70,
+                "w": 25,
+                "h": 12
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t00",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dept-03",
+        "items": [
+          {
+            "id": "SKU-00061",
+            "name": "Component 61",
+            "category": "actuator",
+            "price": 86.57,
+            "stock": {
+              "warehouse": 61,
+              "reserved": 10
+            },
+            "specs": {
+              "mass": 1.15,
+              "dimensions": {
+                "l": 71,
+                "w": 26,
+                "h": 13
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t07",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00062",
+            "name": "Component 62",
+            "category": "controller",
+            "price": 87.94,
+            "stock": {
+              "warehouse": 62,
+              "reserved": 11
+            },
+            "specs": {
+              "mass": 1.2,
+              "dimensions": {
+                "l": 72,
+                "w": 27,
+                "h": 14
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t14",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00063",
+            "name": "Component 63",
+            "category": "fixture",
+            "price": 89.31,
+            "stock": {
+              "warehouse": 63,
+              "reserved": 12
+            },
+            "specs": {
+              "mass": 1.25,
+              "dimensions": {
+                "l": 73,
+                "w": 28,
+                "h": 15
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t21",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00064",
+            "name": "Component 64",
+            "category": "sensor",
+            "price": 90.68,
+            "stock": {
+              "warehouse": 64,
+              "reserved": 13
+            },
+            "specs": {
+              "mass": 1.3,
+              "dimensions": {
+                "l": 74,
+                "w": 29,
+                "h": 16
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t28",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00065",
+            "name": "Component 65",
+            "category": "actuator",
+            "price": 92.05,
+            "stock": {
+              "warehouse": 65,
+              "reserved": 14
+            },
+            "specs": {
+              "mass": 1.35,
+              "dimensions": {
+                "l": 75,
+                "w": 30,
+                "h": 17
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t35",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00066",
+            "name": "Component 66",
+            "category": "controller",
+            "price": 93.42,
+            "stock": {
+              "warehouse": 66,
+              "reserved": 15
+            },
+            "specs": {
+              "mass": 1.4,
+              "dimensions": {
+                "l": 76,
+                "w": 31,
+                "h": 18
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t42",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00067",
+            "name": "Component 67",
+            "category": "fixture",
+            "price": 94.79,
+            "stock": {
+              "warehouse": 67,
+              "reserved": 16
+            },
+            "specs": {
+              "mass": 1.45,
+              "dimensions": {
+                "l": 77,
+                "w": 32,
+                "h": 19
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t49",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00068",
+            "name": "Component 68",
+            "category": "sensor",
+            "price": 96.16,
+            "stock": {
+              "warehouse": 68,
+              "reserved": 0
+            },
+            "specs": {
+              "mass": 1.5,
+              "dimensions": {
+                "l": 78,
+                "w": 33,
+                "h": 20
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t56",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00069",
+            "name": "Component 69",
+            "category": "actuator",
+            "price": 97.53,
+            "stock": {
+              "warehouse": 69,
+              "reserved": 1
+            },
+            "specs": {
+              "mass": 1.55,
+              "dimensions": {
+                "l": 79,
+                "w": 34,
+                "h": 21
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t03",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00070",
+            "name": "Component 70",
+            "category": "controller",
+            "price": 98.9,
+            "stock": {
+              "warehouse": 70,
+              "reserved": 2
+            },
+            "specs": {
+              "mass": 1.6,
+              "dimensions": {
+                "l": 80,
+                "w": 35,
+                "h": 22
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t10",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00071",
+            "name": "Component 71",
+            "category": "fixture",
+            "price": 100.27,
+            "stock": {
+              "warehouse": 71,
+              "reserved": 3
+            },
+            "specs": {
+              "mass": 1.65,
+              "dimensions": {
+                "l": 81,
+                "w": 36,
+                "h": 23
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t17",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00072",
+            "name": "Component 72",
+            "category": "sensor",
+            "price": 101.64,
+            "stock": {
+              "warehouse": 72,
+              "reserved": 4
+            },
+            "specs": {
+              "mass": 1.7,
+              "dimensions": {
+                "l": 82,
+                "w": 37,
+                "h": 24
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t24",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00073",
+            "name": "Component 73",
+            "category": "actuator",
+            "price": 103.01,
+            "stock": {
+              "warehouse": 73,
+              "reserved": 5
+            },
+            "specs": {
+              "mass": 1.75,
+              "dimensions": {
+                "l": 83,
+                "w": 38,
+                "h": 25
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t31",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00074",
+            "name": "Component 74",
+            "category": "controller",
+            "price": 104.38,
+            "stock": {
+              "warehouse": 74,
+              "reserved": 6
+            },
+            "specs": {
+              "mass": 1.8,
+              "dimensions": {
+                "l": 84,
+                "w": 39,
+                "h": 26
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t38",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00075",
+            "name": "Component 75",
+            "category": "fixture",
+            "price": 105.75,
+            "stock": {
+              "warehouse": 75,
+              "reserved": 7
+            },
+            "specs": {
+              "mass": 1.85,
+              "dimensions": {
+                "l": 85,
+                "w": 40,
+                "h": 2
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t45",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00076",
+            "name": "Component 76",
+            "category": "sensor",
+            "price": 107.12,
+            "stock": {
+              "warehouse": 76,
+              "reserved": 8
+            },
+            "specs": {
+              "mass": 1.9,
+              "dimensions": {
+                "l": 86,
+                "w": 41,
+                "h": 3
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t52",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00077",
+            "name": "Component 77",
+            "category": "actuator",
+            "price": 108.49,
+            "stock": {
+              "warehouse": 77,
+              "reserved": 9
+            },
+            "specs": {
+              "mass": 1.95,
+              "dimensions": {
+                "l": 87,
+                "w": 42,
+                "h": 4
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t59",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00078",
+            "name": "Component 78",
+            "category": "controller",
+            "price": 109.86,
+            "stock": {
+              "warehouse": 78,
+              "reserved": 10
+            },
+            "specs": {
+              "mass": 2.0,
+              "dimensions": {
+                "l": 88,
+                "w": 43,
+                "h": 5
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t06",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00079",
+            "name": "Component 79",
+            "category": "fixture",
+            "price": 111.23,
+            "stock": {
+              "warehouse": 79,
+              "reserved": 11
+            },
+            "specs": {
+              "mass": 2.05,
+              "dimensions": {
+                "l": 89,
+                "w": 44,
+                "h": 6
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t13",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00080",
+            "name": "Component 80",
+            "category": "sensor",
+            "price": 112.6,
+            "stock": {
+              "warehouse": 80,
+              "reserved": 12
+            },
+            "specs": {
+              "mass": 0.1,
+              "dimensions": {
+                "l": 90,
+                "w": 5,
+                "h": 7
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t20",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dept-04",
+        "items": [
+          {
+            "id": "SKU-00081",
+            "name": "Component 81",
+            "category": "actuator",
+            "price": 113.97,
+            "stock": {
+              "warehouse": 81,
+              "reserved": 13
+            },
+            "specs": {
+              "mass": 0.15,
+              "dimensions": {
+                "l": 91,
+                "w": 6,
+                "h": 8
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t27",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00082",
+            "name": "Component 82",
+            "category": "controller",
+            "price": 115.34,
+            "stock": {
+              "warehouse": 82,
+              "reserved": 14
+            },
+            "specs": {
+              "mass": 0.2,
+              "dimensions": {
+                "l": 92,
+                "w": 7,
+                "h": 9
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t34",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00083",
+            "name": "Component 83",
+            "category": "fixture",
+            "price": 116.71,
+            "stock": {
+              "warehouse": 83,
+              "reserved": 15
+            },
+            "specs": {
+              "mass": 0.25,
+              "dimensions": {
+                "l": 93,
+                "w": 8,
+                "h": 10
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t41",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00084",
+            "name": "Component 84",
+            "category": "sensor",
+            "price": 118.08,
+            "stock": {
+              "warehouse": 84,
+              "reserved": 16
+            },
+            "specs": {
+              "mass": 0.3,
+              "dimensions": {
+                "l": 94,
+                "w": 9,
+                "h": 11
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t48",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00085",
+            "name": "Component 85",
+            "category": "actuator",
+            "price": 119.45,
+            "stock": {
+              "warehouse": 85,
+              "reserved": 0
+            },
+            "specs": {
+              "mass": 0.35,
+              "dimensions": {
+                "l": 95,
+                "w": 10,
+                "h": 12
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t55",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00086",
+            "name": "Component 86",
+            "category": "controller",
+            "price": 120.82,
+            "stock": {
+              "warehouse": 86,
+              "reserved": 1
+            },
+            "specs": {
+              "mass": 0.4,
+              "dimensions": {
+                "l": 96,
+                "w": 11,
+                "h": 13
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t02",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00087",
+            "name": "Component 87",
+            "category": "fixture",
+            "price": 122.19,
+            "stock": {
+              "warehouse": 87,
+              "reserved": 2
+            },
+            "specs": {
+              "mass": 0.45,
+              "dimensions": {
+                "l": 97,
+                "w": 12,
+                "h": 14
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t09",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00088",
+            "name": "Component 88",
+            "category": "sensor",
+            "price": 123.56,
+            "stock": {
+              "warehouse": 88,
+              "reserved": 3
+            },
+            "specs": {
+              "mass": 0.5,
+              "dimensions": {
+                "l": 98,
+                "w": 13,
+                "h": 15
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t16",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00089",
+            "name": "Component 89",
+            "category": "actuator",
+            "price": 124.93,
+            "stock": {
+              "warehouse": 89,
+              "reserved": 4
+            },
+            "specs": {
+              "mass": 0.55,
+              "dimensions": {
+                "l": 99,
+                "w": 14,
+                "h": 16
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t23",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-06-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-06-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00090",
+            "name": "Component 90",
+            "category": "controller",
+            "price": 126.3,
+            "stock": {
+              "warehouse": 90,
+              "reserved": 5
+            },
+            "specs": {
+              "mass": 0.6,
+              "dimensions": {
+                "l": 10,
+                "w": 15,
+                "h": 17
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t30",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-07-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-07-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00091",
+            "name": "Component 91",
+            "category": "fixture",
+            "price": 127.67,
+            "stock": {
+              "warehouse": 91,
+              "reserved": 6
+            },
+            "specs": {
+              "mass": 0.65,
+              "dimensions": {
+                "l": 11,
+                "w": 16,
+                "h": 18
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t37",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-08-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-08-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00092",
+            "name": "Component 92",
+            "category": "sensor",
+            "price": 129.04,
+            "stock": {
+              "warehouse": 92,
+              "reserved": 7
+            },
+            "specs": {
+              "mass": 0.7,
+              "dimensions": {
+                "l": 12,
+                "w": 17,
+                "h": 19
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t44",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-09-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-09-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00093",
+            "name": "Component 93",
+            "category": "actuator",
+            "price": 130.41,
+            "stock": {
+              "warehouse": 93,
+              "reserved": 8
+            },
+            "specs": {
+              "mass": 0.75,
+              "dimensions": {
+                "l": 13,
+                "w": 18,
+                "h": 20
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t51",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-10-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-10-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00094",
+            "name": "Component 94",
+            "category": "controller",
+            "price": 131.78,
+            "stock": {
+              "warehouse": 94,
+              "reserved": 9
+            },
+            "specs": {
+              "mass": 0.8,
+              "dimensions": {
+                "l": 14,
+                "w": 19,
+                "h": 21
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t58",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-11-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-11-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00095",
+            "name": "Component 95",
+            "category": "fixture",
+            "price": 133.15,
+            "stock": {
+              "warehouse": 95,
+              "reserved": 10
+            },
+            "specs": {
+              "mass": 0.85,
+              "dimensions": {
+                "l": 15,
+                "w": 20,
+                "h": 22
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t05",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-12-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-12-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00096",
+            "name": "Component 96",
+            "category": "sensor",
+            "price": 134.52,
+            "stock": {
+              "warehouse": 96,
+              "reserved": 11
+            },
+            "specs": {
+              "mass": 0.9,
+              "dimensions": {
+                "l": 16,
+                "w": 21,
+                "h": 23
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t12",
+              "grade-1"
+            ],
+            "history": [
+              {
+                "date": "2025-01-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-01-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00097",
+            "name": "Component 97",
+            "category": "actuator",
+            "price": 3.0,
+            "stock": {
+              "warehouse": 97,
+              "reserved": 12
+            },
+            "specs": {
+              "mass": 0.95,
+              "dimensions": {
+                "l": 17,
+                "w": 22,
+                "h": 24
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t19",
+              "grade-2"
+            ],
+            "history": [
+              {
+                "date": "2025-02-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-02-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00098",
+            "name": "Component 98",
+            "category": "controller",
+            "price": 4.37,
+            "stock": {
+              "warehouse": 98,
+              "reserved": 13
+            },
+            "specs": {
+              "mass": 1.0,
+              "dimensions": {
+                "l": 18,
+                "w": 23,
+                "h": 25
+              },
+              "materials": [
+                "aluminium",
+                "steel",
+                "polymer"
+              ]
+            },
+            "tags": [
+              "t26",
+              "grade-3"
+            ],
+            "history": [
+              {
+                "date": "2025-03-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-03-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00099",
+            "name": "Component 99",
+            "category": "fixture",
+            "price": 5.74,
+            "stock": {
+              "warehouse": 99,
+              "reserved": 14
+            },
+            "specs": {
+              "mass": 1.05,
+              "dimensions": {
+                "l": 19,
+                "w": 24,
+                "h": 26
+              },
+              "materials": [
+                "aluminium"
+              ]
+            },
+            "tags": [
+              "t33",
+              "grade-4"
+            ],
+            "history": [
+              {
+                "date": "2025-04-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-04-01",
+                "event": "audited"
+              }
+            ]
+          },
+          {
+            "id": "SKU-00100",
+            "name": "Component 100",
+            "category": "sensor",
+            "price": 7.11,
+            "stock": {
+              "warehouse": 100,
+              "reserved": 15
+            },
+            "specs": {
+              "mass": 1.1,
+              "dimensions": {
+                "l": 20,
+                "w": 25,
+                "h": 2
+              },
+              "materials": [
+                "aluminium",
+                "steel"
+              ]
+            },
+            "tags": [
+              "t40",
+              "grade-0"
+            ],
+            "history": [
+              {
+                "date": "2025-05-15",
+                "event": "received"
+              },
+              {
+                "date": "2026-05-01",
+                "event": "audited"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,494 @@
+{
+  "$comment": "Generated from src/lib/code-templates.ts (PYTHON/MARKDOWN/IGNORE/TEXT/JSON/YAML/TOML/CSV_BLOCKS) — the template-picker-dialog's data source. Keep in sync by re-running the generator or editing both sides; the TS arrays remain the runtime source for the editor's Insert flows.",
+  "generatedFrom": "src/lib/code-templates.ts",
+  "entries": [
+    {
+      "id": "py-function",
+      "name": "Function",
+      "description": "def with docstring and TODO body.",
+      "category": "Definitions",
+      "fileKind": "python",
+      "template": "def {f:process_data}():\n    \"\"\"TODO: describe what this does.\"\"\"\n    $0\n"
+    },
+    {
+      "id": "py-function-args",
+      "name": "Function with args + return",
+      "description": "Typed parameters, defaults, and a return statement.",
+      "category": "Definitions",
+      "fileKind": "python",
+      "template": "def {f:compute_stats}({v:values}, *, {v:precision}: int = 2):\n    \"\"\"TODO: describe what this does.\"\"\"\n    {v:result} = {v:values}\n    return {v:result}\n$0"
+    },
+    {
+      "id": "py-class",
+      "name": "Class",
+      "description": "Class with __init__ and a method.",
+      "category": "Definitions",
+      "fileKind": "python",
+      "template": "class {c:DataProcessor}:\n    \"\"\"TODO: describe the responsibility.\"\"\"\n\n    def __init__(self, {v:name}):\n        self.{v:name} = {v:name}\n\n    def {f:run}(self):\n        $0\n"
+    },
+    {
+      "id": "py-dataclass",
+      "name": "Dataclass",
+      "description": "Immutable-ish record with type hints and defaults.",
+      "category": "Definitions",
+      "fileKind": "python",
+      "template": "from dataclasses import dataclass\n\n\n@dataclass\nclass {c:ConfigItem}:\n    {v:name}: str\n    {v:value}: float = 0.0\n\n$0"
+    },
+    {
+      "id": "py-main",
+      "name": "main guard",
+      "description": "if __name__ == \"__main__\": entry point with a run() function.",
+      "category": "Structure",
+      "fileKind": "python",
+      "template": "def {f:main}() -> None:\n    $0\n\n\nif __name__ == \"__main__\":\n    {f:main}()\n"
+    },
+    {
+      "id": "py-if",
+      "name": "if / elif / else",
+      "description": "Branching skeleton with TODO markers.",
+      "category": "Structure",
+      "fileKind": "python",
+      "template": "if {v:condition}:\n    $0\nelif {v:other}:\n    pass\nelse:\n    pass\n"
+    },
+    {
+      "id": "py-for",
+      "name": "for loop",
+      "description": "Iterate a sequence with a TODO body.",
+      "category": "Loops",
+      "fileKind": "python",
+      "template": "for {v:item} in {v:items}:\n    $0\n"
+    },
+    {
+      "id": "py-for-enumerate",
+      "name": "for with enumerate",
+      "description": "Index + value iteration.",
+      "category": "Loops",
+      "fileKind": "python",
+      "template": "for {v:index}, {v:item} in enumerate({v:items}, start=1):\n    $0\n"
+    },
+    {
+      "id": "py-for-zip",
+      "name": "for with zip",
+      "description": "Parallel iteration over two sequences.",
+      "category": "Loops",
+      "fileKind": "python",
+      "template": "for {v:left}, {v:right} in zip({v:names}, {v:values}):\n    $0\n"
+    },
+    {
+      "id": "py-while",
+      "name": "while loop",
+      "description": "Condition loop with a counter guard.",
+      "category": "Loops",
+      "fileKind": "python",
+      "template": "{v:running} = True\nwhile {v:running}:\n    $0\n    {v:running} = False\n"
+    },
+    {
+      "id": "py-comprehension-list",
+      "name": "List comprehension",
+      "description": "Transform a sequence in one expression.",
+      "category": "Comprehensions",
+      "fileKind": "python",
+      "template": "{v:squared} = [{v:x} ** 2 for {v:x} in {v:values} if {v:x} > 0]\n$0"
+    },
+    {
+      "id": "py-comprehension-dict",
+      "name": "Dict comprehension",
+      "description": "Build a mapping in one expression (keys follow your dict-key style).",
+      "category": "Comprehensions",
+      "fileKind": "python",
+      "template": "{v:lookup} = {\"{d:unit_price}\": {v:price} for {v:price} in {v:prices}}\n$0"
+    },
+    {
+      "id": "py-try",
+      "name": "try / except / finally",
+      "description": "Error handling with a typed exception.",
+      "category": "Safety",
+      "fileKind": "python",
+      "template": "try:\n    $0\nexcept ValueError as {v:error}:\n    print(f\"failed: {{v:error}}\")\nfinally:\n    pass\n"
+    },
+    {
+      "id": "py-with",
+      "name": "with (context manager)",
+      "description": "Open a resource safely.",
+      "category": "Safety",
+      "fileKind": "python",
+      "template": "with open({v:file_path}, \"r\", encoding=\"utf-8\") as {v:handle}:\n    $0\n"
+    },
+    {
+      "id": "py-assert",
+      "name": "assert + message",
+      "description": "Debug check with a failure message.",
+      "category": "Safety",
+      "fileKind": "python",
+      "template": "assert {v:condition}, \"TODO: failure message\"\n$0"
+    },
+    {
+      "id": "py-figure",
+      "name": "Create figure (matplotlib)",
+      "description": "Complete matplotlib block — imports, figure, axis labels, tight layout, show.",
+      "category": "Plotting",
+      "fileKind": "python",
+      "template": "import matplotlib.pyplot as plt\n\n{v:fig}, {v:ax} = plt.subplots(figsize=(7, 4.5))\n{v:ax}.plot({v:x_values}, {v:y_values}, marker=\"o\", linewidth=1.5)\n{v:ax}.set_xlabel(\"x\")\n{v:ax}.set_ylabel(\"y\")\n{v:ax}.set_title(\"TODO: title\")\n{v:fig}.tight_layout()\nplt.show()\n$0"
+    },
+    {
+      "id": "py-subplots",
+      "name": "Grid of subplots",
+      "description": "1×2 subplot grid sharing a figure.",
+      "category": "Plotting",
+      "fileKind": "python",
+      "template": "import matplotlib.pyplot as plt\n\n{v:fig}, ({v:ax1}, {v:ax2}) = plt.subplots(1, 2, figsize=(11, 4.5))\n{v:ax1}.plot({v:x_values})\n{v:ax2}.plot({v:y_values})\n{v:fig}.tight_layout()\nplt.show()\n$0"
+    },
+    {
+      "id": "py-save-figure",
+      "name": "Save figure to file",
+      "description": "Save the current figure as PNG at 200 dpi.",
+      "category": "Plotting",
+      "fileKind": "python",
+      "template": "{v:fig}.savefig(\"{f:output_figure}.png\", dpi=200)\n$0"
+    },
+    {
+      "id": "py-histogram",
+      "name": "Histogram",
+      "description": "Histogram with grid and stats annotation.",
+      "category": "Plotting",
+      "fileKind": "python",
+      "template": "import matplotlib.pyplot as plt\n\n{v:fig}, {v:ax} = plt.subplots(figsize=(7, 4.5))\n{v:ax}.hist({v:values}, bins=30, edgecolor=\"white\")\n{v:ax}.set_title(\"Distribution\")\n{v:ax}.grid(alpha=0.3)\nplt.show()\n$0"
+    },
+    {
+      "id": "py-read-csv",
+      "name": "Read CSV (pandas)",
+      "description": "Import pandas, read a CSV, show head + info.",
+      "category": "Data",
+      "fileKind": "python",
+      "template": "import pandas as pd\n\n{v:df} = pd.read_csv(\"{f:data_file}.csv\")\nprint({v:df}.head())\nprint({v:df}.info())\n$0"
+    },
+    {
+      "id": "py-write-csv",
+      "name": "Write CSV (pandas)",
+      "description": "Persist a DataFrame to CSV without the index.",
+      "category": "Data",
+      "fileKind": "python",
+      "template": "import pandas as pd\n\n{v:df}.to_csv(\"{f:output_data}.csv\", index=False)\n$0"
+    },
+    {
+      "id": "py-read-json",
+      "name": "Read JSON",
+      "description": "Load a JSON config with a context manager.",
+      "category": "Data",
+      "fileKind": "python",
+      "template": "import json\n\nwith open(\"{f:config_file}.json\", \"r\", encoding=\"utf-8\") as {v:handle}:\n    {v:config} = json.load({v:handle})\n$0"
+    },
+    {
+      "id": "py-write-json",
+      "name": "Write JSON",
+      "description": "Serialize data with indentation.",
+      "category": "Data",
+      "fileKind": "python",
+      "template": "import json\n\nwith open(\"{f:output_file}.json\", \"w\", encoding=\"utf-8\") as {v:handle}:\n    json.dump({v:data}, {v:handle}, indent=2)\n$0"
+    },
+    {
+      "id": "py-count-words",
+      "name": "Count occurrences (dict)",
+      "description": "Classic word/element frequency counter with .get.",
+      "category": "Data",
+      "fileKind": "python",
+      "template": "{v:counts} = {}\nfor {v:item} in {v:items}:\n    {v:counts}[{v:item}] = {v:counts}.get({v:item}, 0) + 1\nprint({v:counts})\n$0"
+    },
+    {
+      "id": "py-argparse",
+      "name": "Command-line arguments (argparse)",
+      "description": "CLI parser with positional + optional flags.",
+      "category": "CLI",
+      "fileKind": "python",
+      "template": "import argparse\n\n\ndef {f:parse_args}():\n    {v:parser} = argparse.ArgumentParser(description=\"TODO: tool description\")\n    {v:parser}.add_argument(\"{v:input_path}\", help=\"TODO\")\n    {v:parser}.add_argument(\"--{v:verbose}\", action=\"store_true\", help=\"print progress\")\n    return {v:parser}.parse_args()\n\n\nif __name__ == \"__main__\":\n    {v:args} = {f:parse_args}()\n    $0"
+    },
+    {
+      "id": "py-logging",
+      "name": "Logging setup",
+      "description": "Module-level logger with a sensible format.",
+      "category": "CLI",
+      "fileKind": "python",
+      "template": "import logging\n\nlogging.basicConfig(\n    level=logging.INFO,\n    format=\"%(asctime)s %(levelname)s %(name)s: %(message)s\",\n)\n{v:logger} = logging.getLogger(__name__)\n$0"
+    },
+    {
+      "id": "py-fstring",
+      "name": "f-string print",
+      "description": "Formatted debug print.",
+      "category": "Snippets",
+      "fileKind": "python",
+      "template": "print(f\"{v:name}={{v:name}} $0\")\n"
+    },
+    {
+      "id": "py-test",
+      "name": "pytest test function",
+      "description": "Arrange-Act-Assert test with a docstring.",
+      "category": "Snippets",
+      "fileKind": "python",
+      "template": "def test_{f:compute_stats}():\n    \"\"\"TODO: what behavior is asserted.\"\"\"\n    # Arrange\n    {v:given} = None\n    # Act\n    {v:actual} = None\n    # Assert\n    assert {v:actual} == {v:given}\n$0"
+    },
+    {
+      "id": "md-h2",
+      "name": "Section heading (##)",
+      "description": "Numbered second-level heading.",
+      "category": "Headings",
+      "fileKind": "markdown",
+      "template": "## Section — TODO\n\n$0\n"
+    },
+    {
+      "id": "md-h3",
+      "name": "Subsection heading (###)",
+      "description": "Third-level heading.",
+      "category": "Headings",
+      "fileKind": "markdown",
+      "template": "### Subsection — TODO\n\n$0\n"
+    },
+    {
+      "id": "md-toc",
+      "name": "Table of contents",
+      "description": "Linked outline with anchors.",
+      "category": "Structure",
+      "fileKind": "markdown",
+      "template": "## Contents\n\n- [Introduction](#introduction)\n- [Usage](#usage)\n- [Results](#results)\n- [References](#references)\n\n$0\n"
+    },
+    {
+      "id": "md-table",
+      "name": "Table",
+      "description": "Three-column table with alignment.",
+      "category": "Structure",
+      "fileKind": "markdown",
+      "template": "| Column A | Column B | Column C |\n| --- | :---: | ---: |\n| value | value | value |\n| value | value | value |\n\n$0\n"
+    },
+    {
+      "id": "md-code",
+      "name": "Python code block",
+      "description": "Fenced code block with language + caption.",
+      "category": "Code",
+      "fileKind": "markdown",
+      "template": "```python\n$0\n```\n\n*Caption: TODO.*\n"
+    },
+    {
+      "id": "md-inline-code",
+      "name": "Inline code span",
+      "description": "`code` inline.",
+      "category": "Code",
+      "fileKind": "markdown",
+      "template": "`{v:solution}`$0"
+    },
+    {
+      "id": "md-math",
+      "name": "Math block (LaTeX)",
+      "description": "Display equation fenced with $$.",
+      "category": "Code",
+      "fileKind": "markdown",
+      "template": "$$\nE = mc^2\n$0\n$$\n"
+    },
+    {
+      "id": "md-image",
+      "name": "Image with caption",
+      "description": "Embedded figure + italic caption.",
+      "category": "Media",
+      "fileKind": "markdown",
+      "template": "![TODO: alt text]({v:figure_path}.png)\n\n*Figure 1: TODO caption.*\n\n$0\n"
+    },
+    {
+      "id": "md-link",
+      "name": "Link",
+      "description": "Inline hyperlink.",
+      "category": "Media",
+      "fileKind": "markdown",
+      "template": "[TODO: label](https://example.com)$0"
+    },
+    {
+      "id": "md-badges",
+      "name": "Badge row (shields.io)",
+      "description": "License + version + build badges.",
+      "category": "Media",
+      "fileKind": "markdown",
+      "template": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)\n[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)]()\n\n$0\n"
+    },
+    {
+      "id": "md-quote",
+      "name": "Blockquote",
+      "description": "Quoted note.",
+      "category": "Text",
+      "fileKind": "markdown",
+      "template": "> TODO: quoted note.\n\n$0\n"
+    },
+    {
+      "id": "md-tasklist",
+      "name": "Task list",
+      "description": "Checklist with checkboxes.",
+      "category": "Text",
+      "fileKind": "markdown",
+      "template": "- [ ] TODO: first task\n- [ ] TODO: second task\n- [x] Done example\n\n$0\n"
+    },
+    {
+      "id": "md-details",
+      "name": "Collapsible section",
+      "description": "<details> summary block.",
+      "category": "Text",
+      "fileKind": "markdown",
+      "template": "<details>\n<summary>TODO: click to expand</summary>\n\n$0\n\n</details>\n"
+    },
+    {
+      "id": "md-rule",
+      "name": "Horizontal rule",
+      "description": "Section separator.",
+      "category": "Text",
+      "fileKind": "markdown",
+      "template": "\n---\n\n$0\n"
+    },
+    {
+      "id": "md-admonition",
+      "name": "Note / warning callout",
+      "description": "Bold callout paragraph (GitHub style).",
+      "category": "Text",
+      "fileKind": "markdown",
+      "template": "> **Note**\n> TODO: something worth calling out.\n\n$0\n"
+    },
+    {
+      "id": "ig-python",
+      "name": "Python",
+      "description": "Bytecode, caches, packaging, tests, type-check artifacts.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Python\n__pycache__/\n*.py[cod]\n*$py.class\n*.so\n.Python\nbuild/\ndist/\n*.egg-info/\n.eggs/\n\n# Unit tests / coverage\n.pytest_cache/\n.coverage\nhtmlcov/\n.tox/\n\n# Type checkers\n.mypy_cache/\n.ruff_cache/\n"
+    },
+    {
+      "id": "ig-venv",
+      "name": "Virtual environments",
+      "description": "Common venv directory names.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Virtual environments\n.venv/\nvenv/\nenv/\nENV/\nenv.bak/\nvenv.bak/\n"
+    },
+    {
+      "id": "ig-node",
+      "name": "Node / JS",
+      "description": "node_modules, build output, lockfile caches.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Node\nnode_modules/\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# Build output\n.next/\nout/\nbuild/\ndist/\n.vite/\n"
+    },
+    {
+      "id": "ig-ide",
+      "name": "Editors / IDE",
+      "description": "VS Code, JetBrains, Sublime.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Editors\n.vscode/\n.idea/\n*.swp\n*.swo\n*~\n.sublime-project\n.sublime-workspace\n"
+    },
+    {
+      "id": "ig-os",
+      "name": "Operating systems",
+      "description": ".DS_Store, Thumbs.db, desktop.ini.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# OS\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nThumbs.db\ndesktop.ini\n"
+    },
+    {
+      "id": "ig-jupyter",
+      "name": "Jupyter / IPython",
+      "description": "Checkpoints and profiles.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Jupyter\n.ipynb_checkpoints\n.ipython/profile_default/history.sqlite\n"
+    },
+    {
+      "id": "ig-data",
+      "name": "Data & secrets",
+      "description": "Scratch data, logs, env files with credentials.",
+      "category": "Presets",
+      "fileKind": "gitignore",
+      "template": "# Data / scratch\n*.log\ndata/raw/\n*.tmp\n\n# Secrets — never commit\n.env\n.env.local\n*.pem\n*.key\n"
+    },
+    {
+      "id": "ig-negate",
+      "name": "Re-include pattern (!)",
+      "description": "Un-ignore a specific path after a broad pattern.",
+      "category": "Patterns",
+      "fileKind": "gitignore",
+      "template": "!{v:keep_path}$0\n"
+    },
+    {
+      "id": "txt-header",
+      "name": "Section header",
+      "description": "Underlined title line.",
+      "category": "Structure",
+      "fileKind": "text",
+      "template": "TODO SECTION\n============\n\n$0\n"
+    },
+    {
+      "id": "txt-subheader",
+      "name": "Subsection header",
+      "description": "Dashed underline.",
+      "category": "Structure",
+      "fileKind": "text",
+      "template": "TODO Subsection\n---------------\n\n$0\n"
+    },
+    {
+      "id": "txt-bullets",
+      "name": "Bullet list",
+      "description": "Dash list.",
+      "category": "Structure",
+      "fileKind": "text",
+      "template": "- TODO: first point\n- TODO: second point\n- TODO: third point\n\n$0\n"
+    },
+    {
+      "id": "txt-note",
+      "name": "Date-stamped note",
+      "description": "Timestamped entry with tags.",
+      "category": "Journal",
+      "fileKind": "text",
+      "template": "[YYYY-MM-DD HH:MM] TODO: what happened\n  - tags: todo\n\n$0\n"
+    },
+    {
+      "id": "txt-separator",
+      "name": "Separator",
+      "description": "Visual divider line.",
+      "category": "Journal",
+      "fileKind": "text",
+      "template": "\n----------------------------------------\n\n$0\n"
+    },
+    {
+      "id": "json-object",
+      "name": "Object skeleton",
+      "description": "Nested object with common value types.",
+      "category": "Structure",
+      "fileKind": "json",
+      "template": "{\n  \"{d:config_name}\": \"value\",\n  \"{d:version}\": 1,\n  \"{d:enabled}\": true,\n  \"{d:tags}\": [\"a\", \"b\"],\n  \"{d:nested}\": {\n    \"key\": null\n  }\n}\n$0"
+    },
+    {
+      "id": "json-array",
+      "name": "Array of objects",
+      "description": "List-of-records skeleton.",
+      "category": "Structure",
+      "fileKind": "json",
+      "template": "[\n  {\n    \"{d:item_id}\": 1,\n    \"{d:label}\": \"first\"\n  },\n  {\n    \"{d:item_id}\": 2,\n    \"{d:label}\": \"second\"\n  }\n]\n$0"
+    },
+    {
+      "id": "yaml-mapping",
+      "name": "Mapping + list",
+      "description": "Top-level keys with a nested list.",
+      "category": "Structure",
+      "fileKind": "yaml",
+      "template": "{d:service_name}: praxis\n{d:version}: \"1.0\"\n{d:options}:\n  - alpha\n  - beta\n{d:settings}:\n  {d:debug}: false\n$0"
+    },
+    {
+      "id": "toml-section",
+      "name": "Section + keys",
+      "description": "[table] header with typed values.",
+      "category": "Structure",
+      "fileKind": "toml",
+      "template": "[{d:tool_section}]\n{d:name} = \"value\"\n{d:enabled} = true\n{d:retries} = 3\n$0"
+    },
+    {
+      "id": "csv-header",
+      "name": "Header + sample rows",
+      "description": "Column header and two example data rows.",
+      "category": "Structure",
+      "fileKind": "csv",
+      "template": "{d:id},{d:label},{d:value}\n1,alpha,10.5\n2,beta,20.25\n$0"
+    }
+  ]
+}

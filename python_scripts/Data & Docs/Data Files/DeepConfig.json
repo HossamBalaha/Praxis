@@ -1,0 +1,73 @@
+{
+  "appName": "Praxis",
+  "appVersion": "1.0.0",
+  "logging": {
+    "levelName": "info",
+    "rotateAfterMb": 50,
+    "outputs": [
+      "console",
+      "file"
+    ],
+    "format": {
+      "timestamp": {
+        "enabled": true,
+        "pattern": "ISO8601"
+      },
+      "fields": [
+        "level",
+        "module",
+        "message",
+        "traceId"
+      ]
+    }
+  },
+  "sensors": [
+    {
+      "sensorId": 1,
+      "kindValue": "temperature",
+      "limits": {
+        "lowCelsius": -10,
+        "highCelsius": 45,
+        "isCritical": false
+      },
+      "calibration": [
+        0.98,
+        1.01,
+        0.05
+      ]
+    },
+    {
+      "sensorId": 2,
+      "kindValue": "humidity",
+      "limits": {
+        "lowCelsius": 0,
+        "highCelsius": 100,
+        "isCritical": true
+      },
+      "calibration": [
+        1.0,
+        0.99,
+        0.02
+      ]
+    }
+  ],
+  "features": {
+    "ambientSounds": {
+      "enabled": true,
+      "trackCount": 100
+    },
+    "focusTimer": {
+      "enabled": true,
+      "presets": [
+        "pomodoro",
+        "classic5217",
+        "deepwork"
+      ]
+    },
+    "dataViewers": {
+      "coloredNumbers": true,
+      "zebraRows": true,
+      "coloredHeader": true
+    }
+  }
+}

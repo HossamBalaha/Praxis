@@ -58,7 +58,7 @@ jobs:
         run: bunx electron-builder --${{ matrix.platform }} --publish never
 
       - name: Upload desktop build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Praxis-${{ steps.pkg.outputs.version }}-${{ matrix.platform }}
           path: ${{ matrix.artifact_pattern }}

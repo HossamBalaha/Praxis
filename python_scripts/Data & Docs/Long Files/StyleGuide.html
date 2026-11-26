@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Praxis Style Guide — a LONG page</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 2rem auto;
+      max-width: 56rem;
+      padding: 0 1rem;
+      color: #1a1a2e;
+    }
+
+    h1, h2 {
+      border-bottom: 2px solid #10b981;
+      padding-bottom: .3rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: .4rem .6rem;
+      text-align: left;
+    }
+
+    th {
+      background: #f0fdf4;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: .1rem .3rem;
+      border-radius: 3px;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      margin-right: .4rem;
+      vertical-align: -2px;
+      border: 1px solid #0002;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: .6rem;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: .6rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: #6b7280;
+      font-size: .85rem;
+    }
+  </style>
+</head>
+<body>
+<h1>Praxis Style Guide</h1>
+<p>A deliberately <strong>long</strong> HTML document (~1,600 lines rendered as
+  tables, cards and typography samples) for viewer + formatter testing.</p>
+<h2>Color palette</h2>
+<div class='grid'>
+  <div class='card'><span class='swatch'
+                          style='background:#10b981'></span><strong>emerald</strong><br><code>#10b981</code></div>
+  <div class='card'><span class='swatch' style='background:#0ea5e9'></span><strong>sky</strong><br><code>#0ea5e9</code>
+  </div>
+  <div class='card'><span class='swatch'
+                          style='background:#f59e0b'></span><strong>amber</strong><br><code>#f59e0b</code></div>
+  <div class='card'><span class='swatch'
+                          style='background:#8b5cf6'></span><strong>violet</strong><br><code>#8b5cf6</code></div>
+  <div class='card'><span class='swatch' style='background:#f43f5e'></span><strong>rose</strong><br><code>#f43f5e</code>
+  </div>
+  <div class='card'><span class='swatch'
+                          style='background:#64748b'></span><strong>slate</strong><br><code>#64748b</code></div>
+</div>
+<h2>Typography scale</h2>
+<table>
+  <tr>
+    <th>Token</th>
+    <th>Size</th>
+    <th>Sample</th>
+  </tr>
+  <tr>
+    <td><code>xs</code></td>
+    <td>10px</td>
+    <td style='font-size:10px'>The quick brown fox</td>
+  </tr>
+  <tr>
+    <td><code>sm</code></td>
+    <td>12px</td>
+    <td style='font-size:12px'>The quick brown fox</td>
+  </tr>
+  <tr>
+    <td><code>base</code></td>
+    <td>14px</td>
+    <td style='font-size:14px'>The quick brown fox</td>
+  </tr>
+  <tr>
+    <td><code>lg</code></td>
+    <td>18px</td>
+    <td style='font-size:18px'>The quick brown fox</td>
+  </tr>
+  <tr>
+    <td><code>xl</code></td>
+    <td>24px</td>
+    <td style='font-size:24px'>The quick brown fox</td>
+  </tr>
+  <tr>
+    <td><code>2xl</code></td>
+    <td>32px</td>
+    <td style='font-size:32px'>The quick brown fox</td>
+  </tr>
+</table>
+<h2>Spacing samples</h2>
+<table>
+  <tr>
+    <th>Step</th>
+    <th>px</th>
+    <th>Visual</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0</td>
+    <td>
+      <div style='width:0px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>4</td>
+    <td>
+      <div style='width:4px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>8</td>
+    <td>
+      <div style='width:8px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>12</td>
+    <td>
+      <div style='width:12px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>16</td>
+    <td>
+      <div style='width:16px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>24</td>
+    <td>
+      <div style='width:24px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>32</td>
+    <td>
+      <div style='width:32px;height:12px;background:#10b98155'></div>
+    </td>
+  </tr>
+</table>
+<h2>Component inventory</h2>
+<table>
+  <tr>
+    <th>Component</th>
+    <th>Variants</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td><strong>Button</strong></td>
+    <td>solid · outline · ghost</td>
+    <td>h-8 default, h-7 compact</td>
+  </tr>
+  <tr>
+    <td><strong>Input</strong></td>
+    <td>text · mono</td>
+    <td>h-8, focus ring 1px</td>
+  </tr>
+  <tr>
+    <td><strong>Badge</strong></td>
+    <td>count · size · status</td>
+    <td>tabular numbers</td>
+  </tr>
+  <tr>
+    <td><strong>Dialog</strong></td>
+    <td>sm:max-w-md … sm:max-w-4xl</td>
+    <td>85vh max height</td>
+  </tr>
+  <tr>
+    <td><strong>Toast</strong></td>
+    <td>default · success · destructive</td>
+    <td>4s default duration</td>
+  </tr>
+  <tr>
+    <td><strong>Skeleton</strong></td>
+    <td>per-kind shapes</td>
+    <td>420ms minimum display</td>
+  </tr>
+  <tr>
+    <td><strong>ContextMenu</strong></td>
+    <td>flat + submenus</td>
+    <td>w-56/w-60 columns</td>
+  </tr>
+  <tr>
+    <td><strong>Tabs</strong></td>
+    <td>underline · pill</td>
+    <td>controlled via state</td>
+  </tr>
+</table>
+<h2>Accessibility checklist</h2>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Check</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Rule 001 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Rule 002 — contrast, focus and semantics on component family 1</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Rule 003 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Rule 004 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Rule 005 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Rule 006 — contrast, focus and semantics on component family 1</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Rule 007 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Rule 008 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Rule 009 — contrast, focus and semantics on component family 1</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Rule 010 — contrast, focus and semantics on component family 1</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Rule 011 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Rule 012 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Rule 013 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Rule 014 — contrast, focus and semantics on component family 2</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>Rule 015 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Rule 016 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>Rule 017 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>Rule 018 — contrast, focus and semantics on component family 2</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>Rule 019 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>Rule 020 — contrast, focus and semantics on component family 2</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>Rule 021 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>Rule 022 — contrast, focus and semantics on component family 3</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>Rule 023 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>Rule 024 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>Rule 025 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>Rule 026 — contrast, focus and semantics on component family 3</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>Rule 027 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>Rule 028 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>Rule 029 — contrast, focus and semantics on component family 3</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>Rule 030 — contrast, focus and semantics on component family 3</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>Rule 031 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>32</td>
+    <td>Rule 032 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>33</td>
+    <td>Rule 033 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>34</td>
+    <td>Rule 034 — contrast, focus and semantics on component family 4</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>35</td>
+    <td>Rule 035 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>36</td>
+    <td>Rule 036 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>37</td>
+    <td>Rule 037 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>38</td>
+    <td>Rule 038 — contrast, focus and semantics on component family 4</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td>Rule 039 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>40</td>
+    <td>Rule 040 — contrast, focus and semantics on component family 4</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>41</td>
+    <td>Rule 041 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>42</td>
+    <td>Rule 042 — contrast, focus and semantics on component family 5</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>43</td>
+    <td>Rule 043 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>44</td>
+    <td>Rule 044 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>45</td>
+    <td>Rule 045 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>46</td>
+    <td>Rule 046 — contrast, focus and semantics on component family 5</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>47</td>
+    <td>Rule 047 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>48</td>
+    <td>Rule 048 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>49</td>
+    <td>Rule 049 — contrast, focus and semantics on component family 5</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>50</td>
+    <td>Rule 050 — contrast, focus and semantics on component family 5</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>51</td>
+    <td>Rule 051 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>52</td>
+    <td>Rule 052 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>53</td>
+    <td>Rule 053 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>54</td>
+    <td>Rule 054 — contrast, focus and semantics on component family 6</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>55</td>
+    <td>Rule 055 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>56</td>
+    <td>Rule 056 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>57</td>
+    <td>Rule 057 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>58</td>
+    <td>Rule 058 — contrast, focus and semantics on component family 6</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>59</td>
+    <td>Rule 059 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>60</td>
+    <td>Rule 060 — contrast, focus and semantics on component family 6</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>61</td>
+    <td>Rule 061 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>62</td>
+    <td>Rule 062 — contrast, focus and semantics on component family 7</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>63</td>
+    <td>Rule 063 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>64</td>
+    <td>Rule 064 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>65</td>
+    <td>Rule 065 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>66</td>
+    <td>Rule 066 — contrast, focus and semantics on component family 7</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>67</td>
+    <td>Rule 067 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>68</td>
+    <td>Rule 068 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>69</td>
+    <td>Rule 069 — contrast, focus and semantics on component family 7</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>70</td>
+    <td>Rule 070 — contrast, focus and semantics on component family 7</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>71</td>
+    <td>Rule 071 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>72</td>
+    <td>Rule 072 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>73</td>
+    <td>Rule 073 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>74</td>
+    <td>Rule 074 — contrast, focus and semantics on component family 8</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>75</td>
+    <td>Rule 075 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>76</td>
+    <td>Rule 076 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>77</td>
+    <td>Rule 077 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>78</td>
+    <td>Rule 078 — contrast, focus and semantics on component family 8</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>79</td>
+    <td>Rule 079 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>80</td>
+    <td>Rule 080 — contrast, focus and semantics on component family 8</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>81</td>
+    <td>Rule 081 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>82</td>
+    <td>Rule 082 — contrast, focus and semantics on component family 9</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>83</td>
+    <td>Rule 083 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>84</td>
+    <td>Rule 084 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>85</td>
+    <td>Rule 085 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>86</td>
+    <td>Rule 086 — contrast, focus and semantics on component family 9</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>87</td>
+    <td>Rule 087 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>88</td>
+    <td>Rule 088 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>89</td>
+    <td>Rule 089 — contrast, focus and semantics on component family 9</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>90</td>
+    <td>Rule 090 — contrast, focus and semantics on component family 9</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>91</td>
+    <td>Rule 091 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>92</td>
+    <td>Rule 092 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>93</td>
+    <td>Rule 093 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>94</td>
+    <td>Rule 094 — contrast, focus and semantics on component family 10</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>95</td>
+    <td>Rule 095 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>96</td>
+    <td>Rule 096 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>97</td>
+    <td>Rule 097 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>98</td>
+    <td>Rule 098 — contrast, focus and semantics on component family 10</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>99</td>
+    <td>Rule 099 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>100</td>
+    <td>Rule 100 — contrast, focus and semantics on component family 10</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>101</td>
+    <td>Rule 101 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>102</td>
+    <td>Rule 102 — contrast, focus and semantics on component family 11</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>103</td>
+    <td>Rule 103 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>104</td>
+    <td>Rule 104 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>105</td>
+    <td>Rule 105 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>106</td>
+    <td>Rule 106 — contrast, focus and semantics on component family 11</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>107</td>
+    <td>Rule 107 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>108</td>
+    <td>Rule 108 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>109</td>
+    <td>Rule 109 — contrast, focus and semantics on component family 11</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>110</td>
+    <td>Rule 110 — contrast, focus and semantics on component family 11</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>111</td>
+    <td>Rule 111 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>112</td>
+    <td>Rule 112 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>113</td>
+    <td>Rule 113 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>114</td>
+    <td>Rule 114 — contrast, focus and semantics on component family 12</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>115</td>
+    <td>Rule 115 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>116</td>
+    <td>Rule 116 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>117</td>
+    <td>Rule 117 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>118</td>
+    <td>Rule 118 — contrast, focus and semantics on component family 12</td>
+    <td>— review</td>
+  </tr>
+  <tr>
+    <td>119</td>
+    <td>Rule 119 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+  <tr>
+    <td>120</td>
+    <td>Rule 120 — contrast, focus and semantics on component family 12</td>
+    <td>OK pass</td>
+  </tr>
+</table>
+<footer>Safe to beautify with the HTML auto-format.</footer>
+</body>
+</html>

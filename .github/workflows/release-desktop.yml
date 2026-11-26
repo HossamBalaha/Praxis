@@ -1,0 +1,79 @@
+name: Build Desktop Apps (Portable & Installers)
+
+on:
+  workflow_dispatch: # Manual trigger in the GitHub Actions tab
+  push:
+    tags:
+      - "v*" # Automatic trigger on release tags (e.g., v0.1.0)
+
+permissions:
+  contents: write
+
+jobs:
+  build-desktop:
+    name: Build (${{ matrix.platform }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            platform: win
+            portable_pattern: "dist-desktop/*-Portable.exe"
+            setup_pattern: "dist-desktop/*-Setup.exe"
+          - os: ubuntu-latest
+            platform: linux
+            portable_pattern: "dist-desktop/*-Portable.AppImage"
+            setup_pattern: "dist-desktop/*-Setup.deb"
+          - os: macos-latest
+            platform: mac
+            portable_pattern: "dist-desktop/*-Portable.zip"
+            setup_pattern: "dist-desktop/*-Setup.dmg"
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Get version from package.json
+        id: pkg
+        shell: bash
+        run: echo "version=$(bun -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build Next.js & dereference standalone symlinks
+        run: |
+          bun run build
+          bun scripts/dereference-standalone.js
+
+      - name: Package portable & installable desktop apps
+        run: bunx electron-builder --${{ matrix.platform }} --publish never
+
+      - name: Upload Portable build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Praxis-${{ steps.pkg.outputs.version }}-${{ matrix.platform }}-Portable
+          path: ${{ matrix.portable_pattern }}
+          if-no-files-found: error
+
+      - name: Upload Setup build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Praxis-${{ steps.pkg.outputs.version }}-${{ matrix.platform }}-Setup
+          path: ${{ matrix.setup_pattern }}
+          if-no-files-found: error
+
+      - name: Attach binaries to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ${{ matrix.portable_pattern }}
+            ${{ matrix.setup_pattern }}

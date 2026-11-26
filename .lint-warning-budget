@@ -1,0 +1,42 @@
+# Praxis lint warning budget — the ratchet contract.
+#
+# `bun run lint` (scripts/lint-with-budget.mjs) runs eslint with
+# --max-warnings set to the number on the last non-comment line of this
+# file. The contract:
+#
+#   - Errors ALWAYS fail the build, budget or no budget.
+#   - Warnings fail the build only when the total count EXCEEDS this
+#     budget — which means zero NEW warnings are allowed, ever.
+#   - The budget may only move DOWN: fix some warnings, verify
+#     `bun run lint:raw` reports the new lower count, then lower the
+#     number here to match. Raising it requires explicit justification
+#     in the change that touches this file.
+#
+# Why a budget instead of "fix all 368 now": the debt is concentrated
+# in categories where mechanical fixes are genuinely risky —
+#   159 x @typescript-eslint/no-unused-vars  (case-by-case judgment)
+#    88 x react-hooks/exhaustive-deps        (rewriting hook dependency
+#                                             arrays changes effect
+#                                             re-execution semantics —
+#                                             a dedicated refactor)
+#    49 x no-mixed-spaces-and-tabs           (mostly inside template
+#                                             literals holding embedded
+#                                             Python source, where the
+#                                             whitespace IS the program)
+#    25 x no-useless-escape, 13 x prefer-const, plus assorted small counts.
+# Blindly "fixing" these in one pass is exactly the kind of sweep that
+# causes the layout and save-semantics regressions this pipeline exists
+# to prevent. The ratchet lets the debt shrink safely over time.
+#
+# Baseline recorded 2026-11-21: 368 warnings, 0 errors.
+# 2026-11-21 (Phase 2): lowered to 367 — the split-engine / tab-lifecycle
+# extraction removed one legacy unused-var warning outright.
+# 2026-11-21 (Phase 2b): lowered to 360 — the code-viewer decomposition
+# moved seven more warning-carrying lines into extracted modules (and
+# pruned 82 imports the extraction orphaned).
+# 2026-11-21 (Phase 3, Pyright LSP): lowered to 358 — the integration
+# itself landed warning-neutral after cleanups: the hover-tooltip memo's
+# deps went complete (dropping one stale eslint-disable directive) and
+# the two view-mode mouse/click handlers list `lines` outright instead
+# of the lines.length shorthand their new LSP branches invalidate.
+358

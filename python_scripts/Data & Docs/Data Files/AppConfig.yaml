@@ -1,0 +1,42 @@
+# Application configuration — YAML viewer test set.
+appName: Praxis
+appVersion: 1.0.0
+locale: en-US
+
+server:
+  hostName: 0.0.0.0
+  portNumber: 3000
+  tlsEnabled: false
+  headers:
+    contentType: application/json
+    maxAgeSeconds: 3600
+
+retryPolicy:
+  attempts: 5
+  backoffSeconds: [ 1, 2, 4, 8, 16 ]
+  jitterFactor: 0.25
+
+sensorSites:
+  - siteName: alpha
+    region: north
+    elevationMeters: 240
+    active: true
+  - siteName: beta
+    region: south
+    elevationMeters: 880
+    active: false
+
+descriptionText: |
+  A multiline block for the YAML renderer.
+  Second line keeps its indentation.
+
+foldedSummary: >
+  Folded style summary
+  joins into one line.
+
+featureFlags:
+  coloredNumbers: true
+  zebraRows: true
+  experimentalFormats: [ parquet, feather, avif ]
+
+# coment with a mispeling here

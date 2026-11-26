@@ -1,0 +1,11 @@
+WORKING NOTES — plain text edition
+=================================
+
+The text viewer renders this with monospace font and line numbers.
+
+Checklist:
+  1. Open this file in the viewer
+  2. Edit and save it (⌘S)
+  3. Watch the local history snapshot appear
+
+Keep this line long on purpose ........................................................................... to test the word-wrap toggle.

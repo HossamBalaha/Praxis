@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- tags: html, web-design, formatting -->
+<!-- LandingPage.html — the Web Studio landing page. The <head> links
+     styles.css; the <script> at the bottom loads app.js. Parts of
+     this file are deliberately badly indented — right-click ▸
+     Auto-format HTML (in view OR edit mode) snaps the tree back. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Praxis Studio — build, run, inspect</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="#top">Praxis<span>Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <h1>Your files, <em>alive</em> in the browser.</h1>
+    <p class="lede">Browse, read, run and inspect a whole project
+      without leaving the tab — Python first, plus JavaScript,
+      TypeScript, MATLAB, R, Java, C and more.</p>
+    <a class="cta" href="#features">See what it does</a>
+    <span class="hero-meta">7 runtimes · 14 formattable languages · zero setup</span>
+  </section>
+
+  <section class="features" id="features">
+    <h2>What you get</h2>
+    <div class="feature-grid">
+      <article class="card"><h3>Run anything</h3>
+        <p>Python keeps figures, variables and coverage; every other
+          language routes through the detected runtime registry.</p></article>
+      <article class="card"><h3>Auto-format &amp; auto-indent</h3>
+        <p>HTML, CSS, JS, TS, MATLAB, JSON, YAML, TOML, SQL — offline
+          formatters, per-language indent settings.</p></article>
+      <article class="card"><h3>Interactive stdin</h3>
+        <p>Scripts that <code>input()</code> get a live input box in the
+          run panel — answer prompts while the process streams.</p></article>
+      <article class="card"><h3>Media studios</h3>
+        <p>Image, Video, Audio and PDF studios with waveform players,
+          offline audio renders and PDF page surgery.</p></article>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <h2>Pick a size</h2>
+    <table>
+      <caption>Community pricing — per workspace</caption>
+      <thead>
+      <tr>
+        <th scope="col">Plan</th>
+        <th scope="col">Runners</th>
+        <th scope="col">Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row">Hobby</th>
+        <td>1 parallel run</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <th scope="row">Studio</th>
+        <td>4 parallel runs</td>
+        <td>$9 / mo</td>
+      </tr>
+      <tr>
+        <th scope="row">Lab</th>
+        <td>Unlimited + clusters</td>
+        <td>$29 / mo</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Stay in the loop</h2>
+    <form action="#contact" class="contact-form" method="get">
+      <label for="email">Email</label>
+      <input id="email" name="email" placeholder="you@example.net" required type="email">
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="form-note">One email when the next release ships. No tracking
+      pixels, no third-party fonts.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Praxis Studio — synthesized for the demo.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

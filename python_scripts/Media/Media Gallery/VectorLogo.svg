@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+    <defs>
+        <linearGradient id="backdropGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0f172a"/>
+            <stop offset="1" stop-color="#155e52"/>
+        </linearGradient>
+        <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="8" result="blurShape"/>
+            <feMerge>
+                <feMergeNode in="blurShape"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <rect width="480" height="320" rx="18" fill="url(#backdropGradient)"/>
+    <g filter="url(#softGlow)" transform="translate(240 160)">
+        <polygon points="0,-84 24.5,-7.5 84,-27 47,27 84,84 0,49 -84,84 -47,27 -84,-27 -24.5,-7.5"
+                 fill="#34d399" fill-opacity="0.92"/>
+    </g>
+    <text x="240" y="286" text-anchor="middle" font-family="system-ui, sans-serif"
+          font-size="22" font-weight="600" fill="#a7f3d0">Praxis
+    </text>
+    <circle cx="60" cy="60" r="8" fill="#fbbf24" fill-opacity="0.8"/>
+    <circle cx="420" cy="70" r="5" fill="#38bdf8" fill-opacity="0.8"/>
+</svg>

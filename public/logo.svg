@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Praxis logo — "Prism Play" (flat, rounded-square app icon).
+-->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 64 64" xml:space="preserve"
+     role="img" aria-label="Praxis logo">
+  <defs>
+    <!-- Rounded square with corner radius 14px (22% of 64).
+         Apple HIG recommends ~22% for app icons. This creates
+         a clearly-squircle-like shape, NOT a circle. -->
+      <path id="praxis-squircle" d="
+      M 18 4
+      L 46 4
+      A 14 14 0 0 1 60 18
+      L 60 46
+      A 14 14 0 0 1 46 60
+      L 18 60
+      A 14 14 0 0 1 4 46
+      L 4 18
+      A 14 14 0 0 1 18 4
+      Z
+    "/>
+  </defs>
+
+    <!-- Solid emerald rounded square. Flat — no gradient, no shadow. -->
+    <use href="#praxis-squircle" fill="#10b981"/>
+
+    <!-- ─── Split play triangle ("Prism Play") ───────────────────
+         Two white triangle halves with a 4px vertical gap.
+
+         Full triangle (before split), scaled to fill 63% of canvas:
+           Top-left:    (12, 14)
+           Bottom-left: (12, 50)
+           Right tip:   (52, 32)
+
+         At x=30 (left edge of the 4px gap):
+           Top edge:    y = 14 + (30-12)/(52-12) * (32-14) = 14 + 18/40 * 18 = 14 + 8.1 = 22.1
+           Bottom edge: y = 50 + (30-12)/(52-12) * (32-50) = 50 + 18/40 * (-18) = 50 - 8.1 = 41.9
+
+         Left half (quad):
+           (12, 14) → (30, 22.1) → (30, 41.9) → (12, 50) → close
+
+         Right half (triangle — the tip):
+           (34, 22.1) → (52, 32) → (34, 41.9) → close
+
+         The gap is from x=30 to x=34 = 4px wide.
+    -->
+
+    <!-- Left half of the play triangle. -->
+    <path d="M 12 14 L 30 22.1 L 30 41.9 L 12 50 Z" fill="#ffffff"/>
+
+    <!-- Right half (the tip). -->
+    <path d="M 34 22.1 L 52 32 L 34 41.9 Z" fill="#ffffff"/>
+</svg>

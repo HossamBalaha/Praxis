@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100">
+    <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0f172a"/>
+            <stop offset="1" stop-color="#134e4a"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0.5" cy="0.35" r="0.6">
+            <stop offset="0" stop-color="#34d399" stop-opacity="0.85"/>
+            <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+        </radialGradient>
+    </defs>
+    <rect width="800" height="1100" fill="url(#bg)"/>
+    <rect width="800" height="700" fill="url(#glow)"/>
+    <circle cx="480" cy="360" r="6" fill="#a7f3d0" opacity="0.35"/>
+    <circle cx="487" cy="397" r="9" fill="#a7f3d0" opacity="0.50"/>
+    <circle cx="456" cy="424" r="12" fill="#a7f3d0" opacity="0.65"/>
+    <circle cx="388" cy="411" r="15" fill="#a7f3d0" opacity="0.80"/>
+    <circle cx="301" cy="355" r="18" fill="#a7f3d0" opacity="0.35"/>
+    <circle cx="224" cy="284" r="6" fill="#a7f3d0" opacity="0.50"/>
+    <circle cx="191" cy="248" r="9" fill="#a7f3d0" opacity="0.65"/>
+    <circle cx="222" cy="282" r="12" fill="#a7f3d0" opacity="0.80"/>
+    <circle cx="321" cy="376" r="15" fill="#a7f3d0" opacity="0.35"/>
+    <circle cx="465" cy="477" r="18" fill="#a7f3d0" opacity="0.50"/>
+    <circle cx="613" cy="518" r="6" fill="#a7f3d0" opacity="0.65"/>
+    <circle cx="713" cy="461" r="9" fill="#a7f3d0" opacity="0.80"/>
+    <circle cx="727" cy="328" r="12" fill="#a7f3d0" opacity="0.35"/>
+    <circle cx="637" cy="198" r="15" fill="#a7f3d0" opacity="0.50"/>
+    <circle cx="460" cy="156" r="18" fill="#a7f3d0" opacity="0.65"/>
+    <circle cx="242" cy="242" r="6" fill="#a7f3d0" opacity="0.80"/>
+    <circle cx="50" cy="414" r="9" fill="#a7f3d0" opacity="0.35"/>
+    <circle cx="-53" cy="570" r="12" fill="#a7f3d0" opacity="0.50"/>
+    <text x="400" y="820" font-family="Georgia, serif" font-size="92" fill="#ecfdf5" text-anchor="middle">Praxis</text>
+    <text x="400" y="880" font-family="system-ui, sans-serif" font-size="26" letter-spacing="10" fill="#6ee7b7"
+          text-anchor="middle">IDE FOR EVERYTHING
+    </text>
+    <rect x="300" y="920" width="200" height="3" fill="#34d399"/>
+    <text x="400" y="980" font-family="system-ui, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">demo
+        poster · media gallery
+    </text>
+</svg>

@@ -1,0 +1,72 @@
+{
+  "sensorId": 1,
+  "siteName": "alpha",
+  "temperatureC": 21.4,
+  "passedQc": true
+}
+{
+  "sensorId": 2,
+  "siteName": "beta",
+  "temperatureC": -3.8,
+  "passedQc": false
+}
+{
+  "sensorId": 3,
+  "siteName": "gamma",
+  "temperatureC": 18.2,
+  "passedQc": true
+}
+{
+  "sensorId": 4,
+  "siteName": "alpha",
+  "temperatureC": 27.9,
+  "passedQc": true
+}
+{
+  "sensorId": 5,
+  "siteName": "beta",
+  "temperatureC": null,
+  "passedQc": false
+}
+{
+  "sensorId": 6,
+  "siteName": "gamma",
+  "temperatureC": 12.6,
+  "passedQc": true
+}
+{
+  "sensorId": 7,
+  "siteName": "delta",
+  "temperatureC": 33.1,
+  "passedQc": true
+}
+{
+  "sensorId": 8,
+  "siteName": "delta",
+  "temperatureC": -11.5,
+  "passedQc": false
+}
+{
+  "sensorId": 9,
+  "siteName": "alpha",
+  "temperatureC": 24.0,
+  "passedQc": true
+}
+{
+  "sensorId": 10,
+  "siteName": "gamma",
+  "temperatureC": 15.75,
+  "passedQc": true
+}
+{
+  "sensorId": 11,
+  "siteName": "beta",
+  "temperatureC": 29.3,
+  "passedQc": true
+}
+{
+  "sensorId": 12,
+  "siteName": "gamma",
+  "temperatureC": NaN,
+  "passedQc": false
+}
